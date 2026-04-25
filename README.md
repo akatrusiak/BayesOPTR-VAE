@@ -1,25 +1,6 @@
 # BayesOPTR - VAE
 
 ## Directory Layout
-.
-├── bayesopt
-├── omar_dataset
-├── simulation_data
-│   ├── data
-│   │   ├── output_good_4
-│   │   ├── output_good_5
-│   │   └── output_good_6
-│   ├── extras
-│   ├── output
-│   ├── pipeline
-│   ├── transoptr_verification
-│   ├── x_centroid
-│   └── y_centroid
-├── transoptr
-└── vae_project
-    ├── experiments
-    ├── tests
-    └── vae
 
 * bayesopt -- BOIS code with surrogate mean implementation and experiments
 * omar_dataset -- real data collected from BOIS runs by Omar Hassan
