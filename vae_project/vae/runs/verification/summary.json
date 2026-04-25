@@ -1,0 +1,51 @@
+{
+  "checkpoints": [
+    {
+      "path": "runs/vae_dz5/best.pt",
+      "d_latent": 5,
+      "aggregate": {
+        "val": {
+          "label": "val",
+          "n_ok": 48,
+          "t_err_mean": -0.12422782868879849,
+          "t_err_std": 0.23448214137639511,
+          "t_err_abs_mean": 0.15498248920750715,
+          "t_err_abs_median": 0.02654699315330122,
+          "delta_mse_std_mean": 0.9789647206547604,
+          "delta_mse_std_median": 0.9668459564322202
+        },
+        "train": {
+          "label": "train",
+          "n_ok": 192,
+          "t_err_mean": -0.08894933427691926,
+          "t_err_std": 0.2025451547224281,
+          "t_err_abs_mean": 0.11970995391322325,
+          "t_err_abs_median": 0.02650944804883084,
+          "delta_mse_std_mean": 0.9286009457575332,
+          "delta_mse_std_median": 0.9529511510393237
+        },
+        "all": {
+          "label": "all",
+          "n_ok": 240,
+          "t_err_mean": -0.09600503315929511,
+          "t_err_std": 0.20979785087791736,
+          "t_err_abs_mean": 0.12676446097208005,
+          "t_err_abs_median": 0.026509464260180696,
+          "delta_mse_std_mean": 0.9386737007369786,
+          "delta_mse_std_median": 0.9568718003177346
+        },
+        "n_failed": 0,
+        "wall_seconds": 2127.1282970905304
+      },
+      "per_run_path": "runs/verification/verify_dz5.json"
+    }
+  ],
+  "data_dirs": [
+    "../../simulation_data/data/output_good_4"
+  ],
+  "verify_dir": "../../simulation_data/transoptr_verification",
+  "config_path": "../../simulation_data/transoptr_verification/config.yaml",
+  "axis": "verify",
+  "n_runs": 240,
+  "seed": 0
+}

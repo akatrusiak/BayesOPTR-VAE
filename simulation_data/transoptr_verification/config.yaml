@@ -1,0 +1,82 @@
+# ═══════════════════════════════════════════════════════════════════
+# simulation_data/config.yaml — Global pipeline configuration
+# ═══════════════════════════════════════════════════════════════════
+
+seed: 43
+n_misalignment_samples: 1
+
+# Max TRANSOPTR fit iterations per sampling run. Applied uniformly to
+# every axis. The baseline run (used only to obtain the s-grid) is
+# always run with opt-maxit=1 regardless of this value.
+maxit: 100
+
+# Path to TRANSOPTR source directory (contains src/)
+# or define $OPTRDIR in the environment. 
+# optr_src_dir: /path/to/transoptr
+
+# ── Axes ──────────────────────────────────────────────────────────
+axes:
+  verify:
+    dir: .
+    config: verification_config.yaml
+
+
+# ── Input variables ───────────────────────────────────────────────
+# These are the VAE's "x" — the variables recorded as inputs to the
+# transmission function. Listed by PV name exactly as they appear in
+# data.dat comments. The ordering here defines the column ordering
+# in the output dataset.
+#
+# At runtime, values are read from parameters.log which is written
+# by the modified TRANSOPTR. Column order in parameters.log matches
+# data.dat element index order (DataDat.data["elements"][index]).
+#
+# List every PV that should be part of the input vector:
+input_variables:
+  - HEBT2:XCB2
+  - HEBT2:YCB2
+  - HEBT2:XCB4
+  - HEBT2:YCB4
+  - HEBT2:Q5:CUR
+  - HEBT2:Q6:CUR
+  - HEBT2:XCB6
+  - HEBT2:YCB6
+  - HEBT2:Q7:CUR
+
+# ── Misalignment distribution bounds ─────────────────────────────
+# SHARED across both axes — the same δ is applied to both x and y.
+# Names must match data.dat element names EXACTLY.
+#
+# Source misalignments (genshift at beam injection)
+src_mis:
+  x1: {min: 0.0, max: 0.05}         # MISALIGNX1 in data.dat (cm)
+  y1: {min: 0.0, max: 0.05}         # MISALIGNY1 (cm)
+  x2: {min: 0.0, max: 0.005}        # MISALIGNX2 (rad)
+  y2: {min: 0.0, max: 0.005}        # MISALIGNY2 (rad)
+
+# Quad misalignments — keyed by the PHYSICAL element name (no :CUR).
+# These are the names as they appear in data.dat, e.g. "HEBT2:Q3:MISALIGNX".
+# The pipeline appends :MISALIGNX and :MISALIGNY automatically.
+quad_misalignments:
+  HEBT2:Q2: {min: 0.0, max: 0.05}
+  HEBT2:Q3: {min: 0.0, max: 0.05}
+  HEBT2:Q4: {min: 0.0, max: 0.05}
+  HEBT2:Q5: {min: 0.0, max: 0.05}
+  HEBT2:Q6: {min: 0.0, max: 0.05}
+  HEBT2:Q7: {min: 0.0, max: 0.05}
+  HEBT2:Q8: {min: 0.0, max: 0.05}
+  DRA:Q1:   {min: 0.0, max: 0.05}
+  DRA:Q2:   {min: 0.0, max: 0.05}
+
+# Dipole misalignments
+dipole_misalignments:
+  HEBT2:MB1:
+    pos_mis_min: 0.0
+    pos_mis_max: 0.05               # cm, for :MISALIGNX/Y/Z
+    ang_mis_min: 0.0
+    ang_mis_max: 0.01               # rad, for :MBX/:MBY
+
+# ── Output / processing ──────────────────────────────────────────
+output_dir: output
+n_workers: 8
+chunk_size: 50000

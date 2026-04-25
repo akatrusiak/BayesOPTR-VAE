@@ -1,0 +1,80 @@
+jaya_url: "https://vpn.beta.hla.triumf.ca/jaya/"
+initial_transmission: 820 #write value initial cup reading in pA
+beam_energy: 3227 #beam energy in keV
+beam_mass: 7 # beam mass in amu (only needed for magnetic steering)
+beam_chargestate: 2 # beam chargestate (only needed for magnetic steering)
+steering_elements:
+  HEBT:XCB12:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT:YCB12:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT2:XCB2:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT2:YCB2:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT2:XCB4:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT2:YCB4:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT2:XCB6:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT2:YCB6:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+measurement_device:
+  type: fc
+  loc: 1299.7932600000001
+  pv: DRA:FCCH:SCALECUR
+  measure_points: 20
+  trim_ratio: 0.2
+  ptime: 0.01
+  scale_factor: 1000000000000
+common_elements: {}
+#scale factor is a fudge factor to make all FC measurements be in pA

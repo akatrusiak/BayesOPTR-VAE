@@ -1,0 +1,73 @@
+1.836 0.0 0.0 11177.9 3.0 1.6e-19 ! En[MeV], mom., brho, mass[MeV], charge, beam current or bunch charge
+-1 5 0.01 0.0001 ! iprint (-1=slim output for envelope app, >0 for legacy optr outputs), IVOPT (4: 4-D space-charge, 5: 6-D space-charge), initial RK step, RK error tol.
+0 0.0 1.0 0.0 ! for external Bs field: nb. lines in data file (0=disable), s offset, unit of s (1=cm), unit of Bs (1=kG)
+0.65 0.018 0.65 0.018 0.1 0.001 ! bunch dim: x,x',y,y',z(bun. len.),dp/p
+1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 ! 1 means x,y,z in cm, x',y',dp/p in rad (dimensionless)
+3
+1 2 -0.906 3 4 0.906 5 6 0.0
+63
+0.0        0.0        60.0       0 ! MEBT:Q6:CUR QM1 A
+0.0        0.0        60.0       0 ! MEBT:Q7:CUR QM2 A
+0.0        0.0        60.0       0 ! MEBT:Q8:CUR QM3 A
+0.0        0.0        60.0       0 ! MEBT:Q9:CUR QM4 A
+0.0        0.0        2500.0     0 ! ISAC1:MEBT:AMP:SETPT RFA1 V
+0.0        0.0        1.0        0 ! ISAC1:MEBT:RDREADY RFA2 V
+0.0        -360.0     360.0      0 ! ISAC1:MEBT:PHASE:SETPT RFP1 deg
+0.0        0.0        60.0       0 ! MEBT:Q10:CUR QM5 A
+0.0        0.0        60.0       0 ! MEBT:Q11:CUR QM6 A
+0.0        0.0        60.0       0 ! MEBT:Q12:CUR QM7 A
+0.0        0.0        60.0       0 ! MEBT:Q13:CUR QM8 A
+0.0        0.0        800.0      0 ! ISAC1:DTL1:AMP:SETPT RFA3 V
+0.0        0.0        1.0        0 ! ISAC1:DTL1:RDREADY RFA4 V
+0.0        -360.0     360.0      0 ! ISAC1:DTL1:PHASE:SETPT RFP2 deg
+0.0        0.0        250.0      0 ! DTL:Q1:CUR QM9 A
+0.0        0.0        250.0      0 ! DTL:Q2:CUR QM10 A
+0.0        0.0        250.0      0 ! DTL:Q3:CUR QM11 A
+0.0        0.0        1140.0     0 ! ISAC1:BUNCH1:AMP:SETPT RFA5 V
+0.0        0.0        1.0        0 ! ISAC1:BUNCH1:RDREADY RFA6 V
+0.0        -360.0     360.0      0 ! ISAC1:BUNCH1:PHASE:SETPT RFP3 deg
+0.0        0.0        1220.0     0 ! ISAC1:DTL2:AMP:SETPT RFA7 V
+0.0        0.0        1.0        0 ! ISAC1:DTL2:RDREADY RFA8 V
+0.0        -360.0     360.0      0 ! ISAC1:DTL2:PHASE:SETPT RFP4 deg
+0.0        0.0        250.0      0 ! DTL:Q4:CUR QM12 A
+0.0        0.0        250.0      0 ! DTL:Q5:CUR QM13 A
+0.0        0.0        250.0      0 ! DTL:Q6:CUR QM14 A
+0.0        0.0        1900.0     0 ! ISAC1:BUNCH2:AMP:SETPT RFA9 V
+0.0        0.0        1.0        0 ! ISAC1:BUNCH2:RDREADY RFA10 V
+0.0        -360.0     360.0      0 ! ISAC1:BUNCH2:PHASE:SETPT RFP5 deg
+0.0        0.0        1130.0     0 ! ISAC1:DTL3:AMP:SETPT RFA11 V
+0.0        0.0        1.0        0 ! ISAC1:DTL3:RDREADY RFA12 V
+0.0        -360.0     360.0      0 ! ISAC1:DTL3:PHASE:SETPT RFP6 deg
+0.0        0.0        250.0      0 ! DTL:Q7:CUR QM15 A
+0.0        0.0        250.0      0 ! DTL:Q8:CUR QM16 A
+0.0        0.0        250.0      0 ! DTL:Q9:CUR QM17 A
+0.0        0.0        5000.0     0 ! ISAC1:BUNCH3:AMP:SETPT RFA13 V
+0.0        0.0        1.0        0 ! ISAC1:BUNCH3:RDREADY RFA14 V
+0.0        -360.0     360.0      0 ! ISAC1:BUNCH3:PHASE:SETPT RFP7 deg
+0.0        0.0        1300.0     0 ! ISAC1:DTL4:AMP:SETPT RFA15 V
+0.0        0.0        1.0        0 ! ISAC1:DTL4:RDREADY RFA16 V
+0.0        -360.0     360.0      0 ! ISAC1:DTL4:PHASE:SETPT RFP8 deg
+0.0        0.0        250.0      0 ! DTL:Q10:CUR QM18 A
+0.0        0.0        250.0      0 ! DTL:Q11:CUR QM19 A
+0.0        0.0        250.0      0 ! DTL:Q12:CUR QM20 A
+0.0        0.0        1580.0     0 ! ISAC1:DTL5:AMP:SETPT RFA17 V
+0.0        0.0        1.0        0 ! ISAC1:DTL5:RDREADY RFA18 V
+0.0        -360.0     360.0      0 ! ISAC1:DTL5:PHASE:SETPT RFP9 deg
+0.0        0.0        60.0       0 ! HEBT:Q1:CUR QM21 A
+0.0        0.0        60.0       0 ! HEBT:Q2:CUR QM22 A
+0.0        0.0        60.0       0 ! HEBT:Q3:CUR QM23 A
+0.0        0.0        60.0       0 ! HEBT:Q5:CUR QM24 A
+0.0        0.0        60.0       0 ! HEBT:Q6:CUR QM25 A
+0.0        0.0        60.0       0 ! HEBT:Q7:CUR QM26 A
+0.0        0.0        60.0       0 ! HEBT:Q8:CUR QM27 A
+0.0        0.0        60.0       0 ! HEBT:Q9:CUR QM28 A
+0.0        0.0        60.0       0 ! HEBT:Q10:CUR QM29 A
+0.0        0.0        2500.0     0 ! ISAC1:HEBT11:AMP:SETPT RFA19 V
+0.0        -360.0     360.0      0 ! ISAC1:HEBT11:PHASE:SETPT RFP10 deg
+0.0        0.0        2500.0     0 ! ISAC1:HEBT35:AMP:SETPT RFA20 V
+0.0        -360.0     360.0      0 ! ISAC1:HEBT35:PHASE:SETPT RFP11 deg
+0.0        0.0        60.0       0 ! HEBT:Q11:CUR QM30 A
+0.0        0.0        60.0       0 ! HEBT:Q12:CUR QM31 A
+0.0        0.0        125.0      0 ! HEBT2:Q1:CUR QM32 A
+0.001 20
+10 0.0 0.95 20

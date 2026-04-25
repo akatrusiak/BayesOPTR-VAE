@@ -1,0 +1,451 @@
+misalignments: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/misalignments_yamls/run_170.yaml
+mode: sim
+model: standard
+objective: current
+objective_units: pA
+bound: none
+bound_safety_factor: 1
+sampling: fixed
+initial_points: 20
+make_plots: true
+xlabel: Steerer Value (A)
+ylabel: Transmission %
+fit_vs_scan: false
+fit_vs_scan_points: 15
+switch_time: 5
+iterations: 80
+zero_beta_iterations: 0
+acquisition_function: UCB
+beta: 2
+num_restarts: 20
+raw_samples: 10000
+random_starting_means: false
+deterministic_sampling: false
+sampling_threshold: 5
+kernel:
+  type: Matern
+  nu: 2.5
+  lengthscale_prior:
+    type: Gamma
+    concentration: 3.01
+    rate: 6.01
+  outputscale_prior:
+    type: Gamma
+    concentration: 2.0
+    rate: 0.15
+penalisation_param:
+  gaussian:
+    sigma: 0.25
+  quadratic:
+    penalty_factor: 4
+profile: false
+save_gif: false
+mean_function: null
+beam:
+  jaya_url: https://vpn.devel.hla.triumf.ca/jaya/
+  initial_transmission: null
+  beam_energy: null
+  beam_mass: null
+  beam_chargestate: null
+  steering_elements:
+    HEBT:YCB8:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+  measurement_device:
+    type: fc
+    loc: 599.0377299999999
+    pv: HEBT:FC10:SCALECUR
+    measure_points: 20
+    trim_ratio: 0.2
+    ptime: 0.01
+    scale_factor: 1000000000000
+  common_elements: {}
+sim:
+  name: hebt2
+  type: beamline
+  random_seed: 0
+  acc_path: ios-mcis-hebt2-dragon
+  datadat_path: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/simulation/transoptr/hebt2/data.dat
+  optr_dir: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/simulation/transoptr/hebt2
+  beamline_wall_width: 2.54
+  offset: 1
+  tuning_elements:
+  - steerer
+  - quad
+  misalignment_elements:
+  - quad
+  - src_mis
+  measurement_device: DRA:FC1
+  src_mis:
+    x1:
+      min: 0.0
+      max: 0.05
+    y1:
+      min: 0.0
+      max: 0.05
+    x2:
+      min: 0.0
+      max: 0.005
+    y2:
+      min: 0.0
+      max: 0.005
+  elements:
+    dipole:
+      HEBT2:MB1:
+        type: dipole
+        loc: 107.59058000000002
+        aperture: 2.54
+        plate_length: 39.27094
+        pv: HEBT2:MB1:FLD:SETP
+        lower_bound: -0.02
+        upper_bound: 0.02
+        starting_mean: 0.0
+        starting_var: 0.004
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+        pos_mis_min: 0.0
+        pos_mis_max: 0.05
+        ang_mis_min: 0.0
+        ang_mis_max: 0.01
+    fc:
+      HEBT2:FC1:
+        type: fc
+        loc: 0.0
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:FC1:RDCUR.SMOO
+      HEBT2:FC4:
+        type: fc
+        loc: 400.0743
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:FC4:RDCUR.SMOO
+      DRA:FC1:
+        type: fc
+        loc: 938.3099900000001
+        aperture: 2.54
+        plate_length: 0.0
+        pv: DRA:BIAS6:VOLSET
+        lower_bound: 60.0
+        upper_bound: 350.0
+        starting_mean: 205.0
+        starting_var: 29.0
+        max_incremental_change: 290.0
+        set_zero_crossing: false
+    ffc:
+      HEBT2:FFC4:
+        type: ffc
+        loc: 400.0743
+        aperture: 2.54
+        plate_length: 0.0
+    fortline:
+      mcat-set-hebt2-rpm1-2:
+        type: fortline
+        loc: 397.09924
+        aperture: 2.54
+        plate_length: 0.0
+      mcat-set-dragon-gas:
+        type: fortline
+        loc: 715.12199
+        aperture: 2.54
+        plate_length: 0.0
+    iv:
+      HEBT2:IV8:
+        type: iv
+        loc: 606.06041
+        aperture: 2.54
+        plate_length: 0.0
+    marker:
+      DRAGON-Gas:
+        type: marker
+        loc: 715.12199
+        aperture: 2.54
+        plate_length: 0.0
+      endOf_hebt2_db0:
+        type: marker
+        loc: 715.12199
+        aperture: 2.54
+        plate_length: 0.0
+    quad:
+      HEBT2:Q5:CUR:
+        type: quad
+        loc: 441.12268000000006
+        aperture: 2.6
+        plate_length: 18.0
+        pv: HEBT2:Q5:CUR
+        lower_bound: 0.0
+        upper_bound: 60.0
+        starting_mean: 7.8
+        starting_var: 6.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      HEBT2:Q6:CUR:
+        type: quad
+        loc: 489.12305000000003
+        aperture: 2.6
+        plate_length: 18.0
+        pv: HEBT2:Q6:CUR
+        lower_bound: 0.0
+        upper_bound: 60.0
+        starting_mean: 7.5
+        starting_var: 6.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      HEBT2:Q7:CUR:
+        type: quad
+        loc: 537.12252
+        aperture: 2.6
+        plate_length: 18.0
+        pv: HEBT2:Q7:CUR
+        lower_bound: 0.0
+        upper_bound: 60.0
+        starting_mean: 0.0
+        starting_var: 6.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+    rpm:
+      HEBT2:RPM4:
+        type: rpm
+        loc: 397.09924
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:RPM4:GAIN
+    slit:
+      Dragon-Gas-Slit-1:
+        type: slit
+        loc: 640.6719899999999
+        aperture: 1.5
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-2:
+        type: slit
+        loc: 660.6719899999999
+        aperture: 1.3
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-3:
+        type: slit
+        loc: 670.6719899999999
+        aperture: 1.1800000000000002
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-4:
+        type: slit
+        loc: 686.07199
+        aperture: 0.99
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-5:
+        type: slit
+        loc: 692.22199
+        aperture: 1.0
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-6:
+        type: slit
+        loc: 707.4219899999999
+        aperture: 0.8
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-7:
+        type: slit
+        loc: 708.6869899999999
+        aperture: 0.6
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-8:
+        type: slit
+        loc: 720.5569899999999
+        aperture: 0.8
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-9:
+        type: slit
+        loc: 722.82199
+        aperture: 0.9
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-10:
+        type: slit
+        loc: 738.02199
+        aperture: 1.1800000000000002
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-11:
+        type: slit
+        loc: 744.02199
+        aperture: 1.8050000000000002
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-12:
+        type: slit
+        loc: 747.52199
+        aperture: 1.8050000000000002
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-13:
+        type: slit
+        loc: 751.82199
+        aperture: 1.79
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+      Dragon-Gas-Slit-14:
+        type: slit
+        loc: 800.02199
+        aperture: 3.6
+        plate_length: 0.0
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+    steerer:
+      HEBT2:XCB2:
+        type: steerer
+        loc: 187.63698
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:XCB2:CUR
+        lower_bound: -0.02
+        upper_bound: 0.02
+        starting_mean: 0.0
+        starting_var: 0.004
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT2:YCB2:
+        type: steerer
+        loc: 187.63698
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:YCB2:CUR
+        lower_bound: -0.02
+        upper_bound: 0.02
+        starting_mean: 0.0
+        starting_var: 0.004
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT2:XCB4:
+        type: steerer
+        loc: 416.80744000000004
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:XCB4:CUR
+        lower_bound: -0.02
+        upper_bound: 0.02
+        starting_mean: 0.0
+        starting_var: 0.004
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT2:YCB4:
+        type: steerer
+        loc: 416.80744000000004
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:YCB4:CUR
+        lower_bound: -0.02
+        upper_bound: 0.02
+        starting_mean: 0.0
+        starting_var: 0.004
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT2:XCB6:
+        type: steerer
+        loc: 513.07255
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:XCB6:CUR
+        lower_bound: -0.02
+        upper_bound: 0.02
+        starting_mean: 0.0
+        starting_var: 0.004
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT2:YCB6:
+        type: steerer
+        loc: 513.07255
+        aperture: 2.54
+        plate_length: 0.0
+        pv: HEBT2:YCB6:CUR
+        lower_bound: -0.02
+        upper_bound: 0.02
+        starting_mean: 0.0
+        starting_var: 0.004
+        max_incremental_change: 0.04
+        set_zero_crossing: true

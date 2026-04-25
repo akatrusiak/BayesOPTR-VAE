@@ -1,0 +1,63 @@
+# ═══════════════════════════════════════════════════════════════════
+# x_centroid/x_config.yaml — Axis-specific configuration
+# ═══════════════════════════════════════════════════════════════════
+# Only beamline geometry and transmission calculation parameters.
+# Misalignment bounds and input variables are in the top-level config
+# (shared across axes).
+
+# ── Beamline geometry (for transmission calculation) ──────────────
+beamline_wall_width: 2.54           # cm
+offset: 0                           # YAML `loc` values match TRANSOPTR's
+                                    # System Length (fort.16) directly, so no
+                                    # shift is needed in argmin(|s - loc + offset|).
+measurement_device: DRA:FC1
+
+fc:
+  HEBT2:FC1: {loc: 0.0}
+  HEBT2:FC4: {loc: 400.0743}
+  DRA:FC1:   {loc: 938.3099900000001}
+
+# ── Quad apertures (hardware, for transmission integral) ──────────
+quad_apertures:
+  HEBT2:Q1:
+    loc: 28.999169999999992
+    aperture: 2.6
+  HEBT2:Q3:
+    loc: 259.12432
+    aperture: 2.6
+  HEBT2:Q4:
+    loc: 312.124
+    aperture: 2.6
+  HEBT2:Q5:
+    loc: 441.12268000000006
+    aperture: 2.6
+  HEBT2:Q6:
+    loc: 489.12305000000003
+    aperture: 2.6
+  HEBT2:Q7:
+    loc: 537.12252
+    aperture: 2.6
+  HEBT2:Q8:
+    loc: 585.12199
+    aperture: 2.6
+  DRA:Q1:
+    loc: 834.62199
+    aperture: 5.3975
+  DRA:Q2:
+    loc: 889.62199
+    aperture: 7.9375
+
+# ── Physical slits (active SLIT calls in sy.f) ────────────────────
+# Only uncommented SLIT calls in sy.f appear here. 14 out of 15 slit
+# calls are commented out; Dragon-Gas-Slit-8 is the only active one.
+# Its s-position is computed by walking sy.f and accumulating all
+# length-bearing elements (drifts, bend arc-lengths, mquad lengths).
+slit:
+  Dragon-Gas-Slit-8:
+    loc: 720.557                    # cm, beam-path position of the slit
+    aperture: 0.8                   # cm, half-width (x and y both 0.8)
+
+# ── RF cavities ───────────────────────────────────────────────────
+# None in this HEBT2 segment's sy.f. Format if added:
+# rf:
+#   BCAV1: {loc: ..., plate_length: ..., aperture: ...}

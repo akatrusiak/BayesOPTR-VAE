@@ -1,0 +1,1068 @@
+mode: sim
+model: standard
+objective: current
+objective_units: pA
+bound: none
+bound_safety_factor: 1
+sampling: variable
+initial_sample_points: 20
+make_plots: true
+xlabel: Steerer Value (A)
+ylabel: Transmission %
+fit_vs_scan: false
+fit_vs_scan_points: 15
+switch_time: 5
+iterations: 300
+zero_beta_iterations: 0
+acquisition_function: UCB
+beta: 3
+num_restarts: 20
+raw_samples: 10000
+random_starting_means: false
+deterministic_sampling: false
+sampling_threshold: 5
+kernel:
+  type: Matern
+  nu: 2.5
+  lengthscale_prior:
+    type: Gamma
+    concentration: 3.01
+    rate: 6.01
+  outputscale_prior:
+    type: Gamma
+    concentration: 2.0
+    rate: 0.15
+penalisation_param:
+  gaussian:
+    sigma: 0.25
+  quadratic:
+    penalty_factor: 4
+profile: false
+save_gif: false
+beam:
+  jaya_url: https://vpn.devel.hla.triumf.ca/jaya/
+  initial_transmission: null
+  beam_energy: null
+  beam_mass: null
+  beam_chargestate: null
+  steering_elements:
+    HEBT:YCB8:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+  measurement_device:
+    type: fc
+    loc: 599.0377299999999
+    pv: HEBT:FC10:SCALECUR
+    measure_points: 20
+    trim_ratio: 0.2
+    ptime: 0.01
+    scale_factor: 1000000000000
+  common_elements: {}
+sim:
+  name: mebt-hebt
+  type: beamline
+  random_seed: null
+  acc_path: ios-mws-hebt1-prague
+  datadat_path: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/simulation/transoptr/mebt-hebt/data.dat
+  optr_dir: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/simulation/transoptr/mebt-hebt
+  beamline_wall_width: 2.54
+  offset: 1
+  tuning_elements:
+  - steerer
+  misalignment_elements:
+  - quad
+  - src_mis
+  measurement_device: HEBT:FC5
+  src_mis:
+    x1:
+      min: 0.0
+      max: 0.1
+    y1:
+      min: 0.0
+      max: 0.1
+    x2:
+      min: 0.0
+      max: 0.01
+    y2:
+      min: 0.0
+      max: 0.01
+  elements:
+    dipole:
+      MEBT:MB1:CUR:
+        type: dipole
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 140.05223000000012
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 23.56
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+        pos_mis_min: 0.0
+        pos_mis_max: 0.05
+        ang_mis_min: 0.0
+        ang_mis_max: 0.01
+      MEBT:MB1:
+        type: dipole
+        loc: 140.05223000000012
+        pos_mis_min: 0.0
+        pos_mis_max: 0.05
+        ang_mis_min: 0.0
+        ang_mis_max: 0.01
+      MEBT:MB1:FLD:SETP:
+        type: dipole
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 140.05223000000012
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 23.56
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+        pos_mis_min: 0.0
+        pos_mis_max: 0.05
+        ang_mis_min: 0.0
+        ang_mis_max: 0.01
+      MEBT:MB2:CUR:
+        type: dipole
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 223.61428999999998
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 23.56
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+        pos_mis_min: 0.0
+        pos_mis_max: 0.05
+        ang_mis_min: 0.0
+        ang_mis_max: 0.01
+      MEBT:MB2:
+        type: dipole
+        loc: 223.61428999999998
+        pos_mis_min: 0.0
+        pos_mis_max: 0.05
+        ang_mis_min: 0.0
+        ang_mis_max: 0.01
+      MEBT:MB2:FLD:SETP:
+        type: dipole
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 223.61428999999998
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 23.56
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+        pos_mis_min: 0.0
+        pos_mis_max: 0.05
+        ang_mis_min: 0.0
+        ang_mis_max: 0.01
+    fc:
+      MEBT:FC7:
+        type: fc
+        loc: 181.83542
+      MEBT:FC9:
+        type: fc
+        loc: 332.3330800000001
+      DTL:FC0:
+        type: fc
+        loc: 503.64973
+      DTL:FC3:
+        type: fc
+        loc: 586.64973
+      DTL:FC6:
+        type: fc
+        loc: 697.14973
+      DTL:FC9:
+        type: fc
+        loc: 838.7297300000001
+      DTL:FC12:
+        type: fc
+        loc: 974.64973
+      HEBT:FC0:
+        type: fc
+        loc: 1113.35862
+      HEBT:FC5:
+        type: fc
+        loc: 1456.5768199999998
+    lpm:
+      MEBT:LPM9:
+        type: lpm
+        loc: 332.3330800000001
+      DTL:LPM0:
+        type: lpm
+        loc: 503.64973
+      DTL:LPM3:
+        type: lpm
+        loc: 586.64973
+      DTL:LPM6:
+        type: lpm
+        loc: 697.14973
+      DTL:LPM9:
+        type: lpm
+        loc: 838.64973
+      DTL:LPM12:
+        type: lpm
+        loc: 974.64973
+    quad:
+      MEBT:Q6:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 53.2638
+        starting_mean: 10.1515
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      MEBT:Q7:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 83.27136000000002
+        starting_mean: 13.1917
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      MEBT:Q8:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 280.3956700000001
+        starting_mean: 16.6669
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      MEBT:Q9:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 310.40069000000005
+        starting_mean: 22.0893
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      MEBT:Q10:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 381.9720500000001
+        starting_mean: 9.8248
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      MEBT:Q11:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 411.74085
+        starting_mean: 21.9429
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      MEBT:Q12:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 441.5096500000001
+        starting_mean: 20.9268
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      MEBT:Q13:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 471.27845000000013
+        starting_mean: 10.984
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.0
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q1:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 541.9049239999999
+        starting_mean: 81.62
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q2:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 554.903374
+        starting_mean: 79.33
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 8.7
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q3:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 567.9018239999999
+        starting_mean: 81.62
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q4:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 650.96465
+        starting_mean: 64.87
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q5:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 663.9631
+        starting_mean: 68.78
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 8.7
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q6:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 676.9615499999999
+        starting_mean: 64.87
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q7:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 788.8267099999999
+        starting_mean: 53.65
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q8:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 801.82516
+        starting_mean: 58.88
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 8.7
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q9:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 814.82361
+        starting_mean: 53.65
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q10:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 942.18835
+        starting_mean: 47.09
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q11:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 955.1868000000001
+        starting_mean: 53.35
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 8.7
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      DTL:Q12:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 250.0
+        loc: 968.1852500000001
+        starting_mean: 47.09
+        starting_var: 25.0
+        aperture: 1.1988
+        plate_length: 5.8
+        max_incremental_change: 250.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      HEBT:Q1:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 1154.53672
+        starting_mean: 5.826
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.2
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      HEBT:Q2:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 1191.53717
+        starting_mean: 8.39
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.2
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      HEBT:Q3:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 1294.03672
+        starting_mean: 6.481
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.2
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+      HEBT:Q5:CUR:
+        type: quad
+        lower_bound: 0.0
+        upper_bound: 60.0
+        loc: 1368.03683
+        starting_mean: 5.384
+        starting_var: 6.0
+        aperture: 2.6
+        plate_length: 18.2
+        max_incremental_change: 60.0
+        set_zero_crossing: false
+        misalignments_min: 0.0
+        misalignments_max: 0.05
+    rf:
+      ISAC1:MEBT:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 2500.0
+        loc: 345.17913
+        starting_mean: 0.0
+        starting_var: 250.0
+        aperture: 1.0
+        plate_length: 19.9263
+        max_incremental_change: 2500.0
+        set_zero_crossing: false
+      ISAC1:MEBT:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 345.17913
+        starting_mean: 121.8
+        starting_var: 72.0
+        aperture: 1.0
+        plate_length: 19.9263
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:MEBT:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 345.17913
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 1.0
+        plate_length: 19.9263
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:GLOBAL:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 345.17913
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 1.0
+        plate_length: 19.9263
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:DTL1:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 800.0
+        loc: 520.0229499999999
+        starting_mean: 0.0
+        starting_var: 80.0
+        aperture: 0.69977
+        plate_length: 32.6
+        max_incremental_change: 800.0
+        set_zero_crossing: false
+      ISAC1:DTL1:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 520.0229499999999
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 0.69977
+        plate_length: 32.6
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:DTL1:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 520.0229499999999
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 0.69977
+        plate_length: 32.6
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:BUNCH1:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1140.0
+        loc: 579.37259
+        starting_mean: 0.0
+        starting_var: 114.0
+        aperture: 2.54
+        plate_length: 13.050012
+        max_incremental_change: 1140.0
+        set_zero_crossing: false
+      ISAC1:BUNCH1:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 579.37259
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 2.54
+        plate_length: 13.050012
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:BUNCH1:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 579.37259
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 2.54
+        plate_length: 13.050012
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:DTL2:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1220.0
+        loc: 618.1364199999999
+        starting_mean: 0.0
+        starting_var: 122.0
+        aperture: 0.499999
+        plate_length: 55.0
+        max_incremental_change: 1220.0
+        set_zero_crossing: false
+      ISAC1:DTL2:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 618.1364199999999
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 0.499999
+        plate_length: 55.0
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:DTL2:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 618.1364199999999
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 0.499999
+        plate_length: 55.0
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:BUNCH2:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1900.0
+        loc: 689.33453
+        starting_mean: 0.0
+        starting_var: 190.0
+        aperture: 2.54
+        plate_length: 14.85011
+        max_incremental_change: 1900.0
+        set_zero_crossing: false
+      ISAC1:BUNCH2:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 689.33453
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 2.54
+        plate_length: 14.85011
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:BUNCH2:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 689.33453
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 2.54
+        plate_length: 14.85011
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:DTL3:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1130.0
+        loc: 742.4971099999999
+        starting_mean: 0.0
+        starting_var: 113.0
+        aperture: 0.8001
+        plate_length: 82.0
+        max_incremental_change: 1130.0
+        set_zero_crossing: false
+      ISAC1:DTL3:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 742.4971099999999
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 0.8001
+        plate_length: 82.0
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:DTL3:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 742.4971099999999
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 0.8001
+        plate_length: 82.0
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:BUNCH3:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 5000.0
+        loc: 828.4465200000001
+        starting_mean: 0.0
+        starting_var: 500.0
+        aperture: 2.54
+        plate_length: 17.349978
+        max_incremental_change: 5000.0
+        set_zero_crossing: false
+      ISAC1:BUNCH3:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 828.4465200000001
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 2.54
+        plate_length: 17.349978
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:BUNCH3:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 828.4465200000001
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 2.54
+        plate_length: 17.349978
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:DTL4:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1300.0
+        loc: 889.3588900000001
+        starting_mean: 0.0
+        starting_var: 130.0
+        aperture: 0.8001
+        plate_length: 95.0
+        max_incremental_change: 1300.0
+        set_zero_crossing: false
+      ISAC1:DTL4:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 889.3588900000001
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 0.8001
+        plate_length: 95.0
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:DTL4:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 889.3588900000001
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 0.8001
+        plate_length: 95.0
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+      ISAC1:DTL5:AMP:SETPT:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1580.0
+        loc: 1031.68881
+        starting_mean: 0.0
+        starting_var: 158.0
+        aperture: 0.8001
+        plate_length: 102.77602
+        max_incremental_change: 1580.0
+        set_zero_crossing: false
+      ISAC1:DTL5:PHASE:SETPT:
+        type: rf
+        lower_bound: -360.0
+        upper_bound: 360.0
+        loc: 1031.68881
+        starting_mean: 0.0
+        starting_var: 72.0
+        aperture: 0.8001
+        plate_length: 102.77602
+        max_incremental_change: 720.0
+        set_zero_crossing: true
+      ISAC1:DTL5:RDREADY:
+        type: rf
+        lower_bound: 0.0
+        upper_bound: 1.0
+        loc: 1031.68881
+        starting_mean: 0.0
+        starting_var: 0.1
+        aperture: 0.8001
+        plate_length: 102.77602
+        max_incremental_change: 1.0
+        set_zero_crossing: false
+    rpm:
+      MEBT:RPM5:
+        type: rpm
+        loc: 0.0
+      MEBT:RPM7:
+        type: rpm
+        loc: 176.66779000000008
+      HEBT:RPM0:
+        type: rpm
+        loc: 1105.0965699999997
+      HEBT:RPM5:
+        type: rpm
+        loc: 1446.03683
+    sid:
+      MEBT:SID9:
+        type: sid
+        loc: 332.3330800000001
+    slit:
+      MEBT:XSLIT7:
+        type: slit
+        loc: 181.83542
+        misalignments_min: 0.0
+        misalignments_max: 1.0
+        x_lower: 0.5
+        x_upper: 0.5
+        y_lower: 1.0
+        y_upper: 1.0
+    steerer:
+      MEBT:YCB7A:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 104.20477000000005
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      MEBT:YCB7B:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 259.95196999999996
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      MEBT:XCB9:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 362.09071000000006
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      MEBT:YCB9:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 362.09071000000006
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      MEBT:YCB11:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 426.62525000000005
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      MEBT:XCB12:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 456.39405
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB2:XCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 564.6033739999999
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB2:YCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 564.6033739999999
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB5:XCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 673.6630999999999
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB5:YCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 673.6630999999999
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB8:XCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 811.52516
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB8:YCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 811.52516
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB11:XCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 964.8867999999999
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      DTL:XYCB11:YCUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 964.8867999999999
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT:XCB0:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 1134.0365899999997
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT:YCB0:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 1134.0365899999997
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT:XCB2:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 1273.5140499999998
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+      HEBT:YCB2:CUR:
+        type: steerer
+        lower_bound: -0.02
+        upper_bound: 0.02
+        loc: 1273.5140499999998
+        starting_mean: 0.0
+        starting_var: 0.004
+        aperture: 2.54
+        plate_length: 0.0
+        max_incremental_change: 0.04
+        set_zero_crossing: true
+    strp:
+      HEBT:STRP5:
+        type: strp
+        loc: 1446.0368399999998

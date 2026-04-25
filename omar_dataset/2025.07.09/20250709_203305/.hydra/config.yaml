@@ -1,0 +1,102 @@
+model: standard
+objective: current
+objective_units: pA
+bound: none
+bound_safety_factor: 1
+sampling: variable
+initial_sample_points: 20
+make_plots: true
+xlabel: Steerer Value (A)
+ylabel: Transmission %
+fit_vs_scan: false
+fit_vs_scan_points: 15
+switch_time: 5
+iterations: 40
+zero_beta_iterations: 0
+acquisition_function: EI
+beta: 0.1
+num_restarts: 20
+raw_samples: 10000
+random_starting_means: false
+deterministic_sampling: false
+sampling_threshold: 5
+kernel:
+  type: Matern
+  nu: 2.5
+  lengthscale_prior:
+    type: Gamma
+    concentration: 3.01
+    rate: 6.01
+  outputscale_prior:
+    type: Gamma
+    concentration: 2.0
+    rate: 0.15
+penalisation_param:
+  gaussian:
+    sigma: 0.25
+  quadratic:
+    penalty_factor: 4
+beam:
+  jaya_url: https://vpn.beta.hla.triumf.ca/jaya/
+  initial_transmission: 20000
+  beam_energy: 6400
+  beam_mass: 4
+  beam_chargestate: 1
+  steering_elements:
+    MEBT:YCB7A:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    MEBT:YCB7B:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    MEBT:XCB9:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    MEBT:YCB9:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    MEBT:YCB11:CUR:
+      type: steerer
+      lower_bound: -3.0
+      upper_bound: 3.0
+      starting_mean: 0.0
+      starting_var: 0.6
+      max_incremental_change: 6.0
+      set_zero_crossing: true
+    MEBT:XCB12:CUR:
+      type: steerer
+      lower_bound: -3.0
+      upper_bound: 3.0
+      starting_mean: 0.0
+      starting_var: 0.6
+      max_incremental_change: 6.0
+      set_zero_crossing: true
+  measurement_device:
+    type: fc
+    loc: 1403.3130199999998
+    pv: HEBT:FC5:SCALECUR
+    measure_points: 20
+    trim_ratio: 0.2
+    ptime: 0.01
+    scale_factor: 1000000000000
+  common_elements: {}

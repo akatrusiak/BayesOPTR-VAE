@@ -1,0 +1,45 @@
+<root xmlns:xi='http://www.w3.org/2001/XInclude' path="ios-mws-hebt1-prague">
+
+    <optr s11="0.1*cm" s22="10.0*mrad" s33="0.1*cm" s44="10.0*mrad" 
+        s55="0.001" s66="1.0*mrad" r12="0.0" r34="0.0" r56="0.0" 
+        bunchcharge='1.6e-19*C'  start="MEBT:RPM5" end="HEBT:FC5"/>
+    <!-- <optr s11="0.15*cm" s22="1.5*mrad" s33="0.15*cm" s44="1.5*mrad" 
+        s55="0.15" s66="0.015*rad" r12="0.0" r34="0.0" r56="0.0" 
+        bunchcharge='1.6e-19*C'  start="MEBT:RPM5" end="HEBT:FC5"/> -->
+    <tune mass="20.00*u" chargestate="4.0" energypernucleon="3.06/20.0*MeV/u"/>
+
+    <set pv="MEBT:Q6:CUR" value="10.1515*A"/>
+    <set pv="MEBT:Q7:CUR" value="13.1917*A"/>
+    <set pv="MEBT:Q8:CUR" value="16.6669*A"/>
+    <set pv="MEBT:Q9:CUR" value="22.0893*A"/>
+    <set pv="ISAC1:MEBT:AMP:SETPT" value="0.0*V"/>
+    <set pv="ISAC1:MEBT:PHASE:SETPT" value="121.8*deg"/>
+    <set pv="MEBT:Q10:CUR" value="9.8248*A"/>
+    <set pv="MEBT:Q11:CUR" value="21.9429*A"/>
+    <set pv="MEBT:Q12:CUR" value="20.9268*A"/>
+    <set pv="MEBT:Q13:CUR" value="10.984*A"/>
+
+    
+    <set pv="DTL:Q1:CUR" value="81.62*A" tuneable="True"/>
+    <set pv="DTL:Q2:CUR" value="79.33*A" tuneable="True"/>
+    <set pv="DTL:Q3:CUR" value="81.62*A" tuneable="True"/>
+    
+    <set pv="DTL:Q4:CUR" value="64.87*A" tuneable="True"/>
+    <set pv="DTL:Q5:CUR" value="68.78*A" tuneable="True"/>
+    <set pv="DTL:Q6:CUR" value="64.87*A" tuneable="True"/>
+    
+    <set pv="DTL:Q7:CUR" value="53.65*A" tuneable="True"/>
+    <set pv="DTL:Q8:CUR" value="58.88*A" tuneable="True"/>
+    <set pv="DTL:Q9:CUR" value="53.65*A" tuneable="True"/>
+    
+    <set pv="DTL:Q10:CUR" value="47.09*A" tuneable="True"/>
+    <set pv="DTL:Q11:CUR" value="53.35*A" tuneable="True"/>
+    <set pv="DTL:Q12:CUR" value="47.09*A" tuneable="True"/>
+
+    <set pv="HEBT:Q1:CUR" value="5.826*A"/>
+    <set pv="HEBT:Q2:CUR" value="8.39*A"/>
+    <set pv="HEBT:Q3:CUR" value="6.481*A"/>
+    <set pv="HEBT:Q5:CUR" value="5.384*A"/>
+
+
+</root>

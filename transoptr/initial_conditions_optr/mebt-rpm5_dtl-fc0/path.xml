@@ -1,0 +1,85 @@
+<root xmlns:xi="http://www.w3.org/2001/XInclude" path="ios-mcis-hebt2-dragon">
+  <optr s11="0.65*cm" s22="18.0*mrad" s33="0.65*cm" s44="18.0*mrad" s55="0.001" s66="1.0*mrad" r12="-0.906" r34="0.906" r56="0.0" bunchcharge="1.6e-19*C" start="MEBT:RPM5" end="HEBT2:FC1"/>
+  <tune mass="12.00*u" chargestate="3.0" energypernucleon="0.153*MeV/u"/>
+  <!-- MEBT Quads -->
+  <set pv="MEBT:Q6:CUR" value="27.8*A"/>
+  <set pv="MEBT:Q7:CUR" value="14.6*A"/>
+  <set pv="MEBT:Q8:CUR" value="13.3*A"/>
+  <set pv="MEBT:Q9:CUR" value="17.5*A"/>
+  <set pv="MEBT:Q10:CUR" value="0*A"/>
+  <set pv="MEBT:Q11:CUR" value="14.6*A"/>
+  <set pv="MEBT:Q12:CUR" value="17.4*A"/>
+  <set pv="MEBT:Q13:CUR" value="9.8*A"/>
+  <!-- MEBT RF -->
+  <set pv="ISAC1:MEBT:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:MEBT:RDREADY" value="0"/>
+  <set pv="ISAC1:MEBT:PHASE:SETPT" value="0"/>
+  <!-- DTL1 RF -->
+  <set pv="ISAC1:DTL1:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:DTL1:RDREADY" value="0"/>
+  <set pv="ISAC1:DTL1:PHASE:SETPT" value="0"/>
+  <!-- DTL Quads 1-3 -->
+  <set pv="DTL:Q1:CUR" value="68.2*A"/>
+  <set pv="DTL:Q2:CUR" value="72.3*A"/>
+  <set pv="DTL:Q3:CUR" value="72.4*A"/>
+  <!-- Buncher 1 RF -->
+  <set pv="ISAC1:BUNCH1:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:BUNCH1:RDREADY" value="0"/>
+  <set pv="ISAC1:BUNCH1:PHASE:SETPT" value="0"/>
+  <!-- DTL2 RF -->
+  <set pv="ISAC1:DTL2:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:DTL2:RDREADY" value="0"/>
+  <set pv="ISAC1:DTL2:PHASE:SETPT" value="0"/>
+  <!-- DTL Quads 4-6 -->
+  <set pv="DTL:Q4:CUR" value="72.8*A"/>
+  <set pv="DTL:Q5:CUR" value="85.9*A"/>
+  <set pv="DTL:Q6:CUR" value="86.7*A"/>
+  <!-- Buncher 2 RF -->
+  <set pv="ISAC1:BUNCH2:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:BUNCH2:RDREADY" value="0"/>
+  <set pv="ISAC1:BUNCH2:PHASE:SETPT" value="0"/>
+  <!-- DTL3 RF -->
+  <set pv="ISAC1:DTL3:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:DTL3:RDREADY" value="0"/>
+  <set pv="ISAC1:DTL3:PHASE:SETPT" value="0"/>
+  <!-- DTL Quads 7-9 -->
+  <set pv="DTL:Q7:CUR" value="67.5*A"/>
+  <set pv="DTL:Q8:CUR" value="77.9*A"/>
+  <set pv="DTL:Q9:CUR" value="69.8*A"/>
+  <!-- Buncher 3 RF -->
+  <set pv="ISAC1:BUNCH3:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:BUNCH3:RDREADY" value="0"/>
+  <set pv="ISAC1:BUNCH3:PHASE:SETPT" value="0"/>
+  <!-- DTL4 RF -->
+  <set pv="ISAC1:DTL4:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:DTL4:RDREADY" value="0"/>
+  <set pv="ISAC1:DTL4:PHASE:SETPT" value="0"/>
+  <!-- DTL Quads 10-12 -->
+  <set pv="DTL:Q10:CUR" value="55.3*A"/>
+  <set pv="DTL:Q11:CUR" value="72.3*A"/>
+  <set pv="DTL:Q12:CUR" value="69*A"/>
+  <!-- DTL5 RF -->
+  <set pv="ISAC1:DTL5:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:DTL5:RDREADY" value="0"/>
+  <set pv="ISAC1:DTL5:PHASE:SETPT" value="0"/>
+  <!-- HEBT Quads -->
+  <set pv="HEBT:Q1:CUR" value="0*A"/>
+  <set pv="HEBT:Q2:CUR" value="9.3*A"/>
+  <set pv="HEBT:Q3:CUR" value="10.6*A"/>
+  <set pv="HEBT:Q5:CUR" value="14.9*A"/>
+  <set pv="HEBT:Q6:CUR" value="8.5*A"/>
+  <set pv="HEBT:Q7:CUR" value="7.8*A"/>
+  <set pv="HEBT:Q8:CUR" value="8.5*A"/>
+  <set pv="HEBT:Q9:CUR" value="3.8*A"/>
+  <set pv="HEBT:Q10:CUR" value="7.1*A"/>
+  <!-- HEBT RF -->
+  <set pv="ISAC1:HEBT11:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:HEBT11:PHASE:SETPT" value="0"/>
+  <set pv="ISAC1:HEBT35:AMP:SETPT" value="0"/>
+  <set pv="ISAC1:HEBT35:PHASE:SETPT" value="0"/>
+  <!-- HEBT Quads continued -->
+  <set pv="HEBT:Q11:CUR" value="5*A"/>
+  <set pv="HEBT:Q12:CUR" value="4.2*A"/>
+  <!-- HEBT2 -->
+  <set pv="HEBT2:Q1:CUR" value="0*A"/>
+</root>

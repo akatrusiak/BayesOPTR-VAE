@@ -1,0 +1,48 @@
+jaya_url: "https://vpn.beta.hla.triumf.ca/jaya/"
+initial_transmission: #write value initial cup reading in pA
+beam_energy: #beam energy in keV
+beam_mass: # beam mass in amu (only needed for magnetic steering)
+beam_chargestate: # beam chargestate (only needed for magnetic steering)
+steering_elements:
+  HEBT:XCB0:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:YCB0:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:XCB2:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:YCB2:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+measurement_device:
+  type: fc
+  loc: 343.2182
+  pv: HEBT:FC5:SCALECUR
+  measure_points: 20
+  trim_ratio: 0.2
+  ptime: 0.01
+  scale_factor: 1000000000000
+common_elements: {}
+#scale factor is a fudge factor to make all FC measurements be in pA

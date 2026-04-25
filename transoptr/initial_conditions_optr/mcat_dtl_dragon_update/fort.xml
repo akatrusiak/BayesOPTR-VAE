@@ -1,0 +1,401 @@
+ <seq>
+<element id="TwissFind" type="TwissFind" at="    0.000*mm" l="0">
+<optr ixory=" 1"> </optr>
+</element>
+
+<element id="TwissFind" type="TwissFind" at="    0.000*mm" l="0">
+<optr ixory=" 3"> </optr>
+</element>
+
+<element id="MEBT:RPM5" type="marker" s="        0.000*mm" l="0">
+</element>
+
+<element id="fringeQ" type="fortline" s="   20.041*mm" l="0">
+<optr>
+call fringeQ(  0.368, -0.222,  0.116, -0.422)
+ </optr>
+</element>
+
+<element id="MEBT:Q6" type="mq" s="      532.638*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q6:CUR'/>
+ </epics>
+ <optr Btip="-MEBT:Q6:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="MEBT:Q7" type="mq" s="      832.714*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q7:CUR'/>
+ </epics>
+ <optr Btip="+MEBT:Q7:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="MEBT:MB1        " type="mb  " s="     1400.523*mm" l="      235.600*mm">
+<optr theta="       45.000*deg" entrEdge="       22.500*deg" exitEdge="       22.500*deg" fieldIndex="        0.000" k1="        0.550" k2="        0.000" edgeCurv="        0.000/cm" fullGap="        5.720*cm" />
+</element>
+
+<element id="MEBT:RPM7" type="marker" s="     1766.682*mm" l="0">
+</element>
+
+<element id="MEBT:FC7" type="marker" s="     1818.358*mm" l="0">
+</element>
+
+<element id="MEBT:MB2        " type="mb  " s="     2236.139*mm" l="      235.600*mm">
+<optr theta="       45.000*deg" entrEdge="       22.500*deg" exitEdge="       22.500*deg" fieldIndex="        0.000" k1="        0.550" k2="        0.000" edgeCurv="        0.000/cm" fullGap="        5.720*cm" />
+</element>
+
+<element id="MEBT:Q8" type="mq" s="     2803.947*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q8:CUR'/>
+ </epics>
+ <optr Btip="+MEBT:Q8:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="MEBT:Q9" type="mq" s="     3104.001*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q9:CUR'/>
+ </epics>
+ <optr Btip="-MEBT:Q9:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="MEBT:FC9" type="marker" s="     3323.325*mm" l="0">
+</element>
+
+<element id="MEBT:Q10" type="mq" s="     3819.704*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q10:CUR'/>
+ </epics>
+ <optr Btip="+MEBT:Q10:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="MEBT:Q11" type="mq" s="     4117.390*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q11:CUR'/>
+ </epics>
+ <optr Btip="-MEBT:Q11:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="MEBT:Q12" type="mq" s="     4415.075*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q12:CUR'/>
+ </epics>
+ <optr Btip="+MEBT:Q12:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="MEBT:Q13" type="mq" s="     4712.761*mm" l="      178.900*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':MEBT:Q13:CUR'/>
+ </epics>
+ <optr Btip="-MEBT:Q13:CUR*??*T/A" aperR="        2.547*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 5036.483*mm" l="0">
+<optr>
+call fringeQ(  0.496, -0.241,  0.213, -0.521)
+ </optr>
+</element>
+
+<element id="DTL:FC0" type="marker" s="     5036.483*mm" l="0">
+</element>
+
+<element id="DTL:Q1" type="mq" s="     5419.044*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q1:CUR'/>
+ </epics>
+ <optr Btip="+DTL:Q1:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 5496.494*mm" l="0">
+<optr>
+call fringeQ(  0.450, -0.232,  0.170, -0.481)
+ </optr>
+</element>
+
+<element id="DTL:Q2" type="mq" s="     5549.029*mm" l="       87.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q2:CUR'/>
+ </epics>
+ <optr Btip="-DTL:Q2:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 5645.491*mm" l="0">
+<optr>
+call fringeQ(  0.496, -0.241,  0.213, -0.521)
+ </optr>
+</element>
+
+<element id="DTL:Q3" type="mq" s="     5679.013*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q3:CUR'/>
+ </epics>
+ <optr Btip="+DTL:Q3:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="DTL:FC3" type="marker" s="     5866.489*mm" l="0">
+</element>
+
+<element id="DTL:Q4" type="mq" s="     6509.658*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q4:CUR'/>
+ </epics>
+ <optr Btip="-DTL:Q4:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 6586.510*mm" l="0">
+<optr>
+call fringeQ(  0.450, -0.232,  0.170, -0.481)
+ </optr>
+</element>
+
+<element id="DTL:Q5" type="mq" s="     6639.644*mm" l="       87.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q5:CUR'/>
+ </epics>
+ <optr Btip="+DTL:Q5:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 6736.640*mm" l="0">
+<optr>
+call fringeQ(  0.496, -0.241,  0.213, -0.521)
+ </optr>
+</element>
+
+<element id="DTL:Q6" type="mq" s="     6769.624*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q6:CUR'/>
+ </epics>
+ <optr Btip="-DTL:Q6:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="DTL:FC6" type="marker" s="     6971.500*mm" l="0">
+</element>
+
+<element id="DTL:Q7" type="mq" s="     7888.271*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q7:CUR'/>
+ </epics>
+ <optr Btip="+DTL:Q7:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 7931.255*mm" l="0">
+<optr>
+call fringeQ(  0.450, -0.232,  0.170, -0.481)
+ </optr>
+</element>
+
+<element id="DTL:Q8" type="mq" s="     8018.254*mm" l="       87.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q8:CUR'/>
+ </epics>
+ <optr Btip="-DTL:Q8:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 8115.250*mm" l="0">
+<optr>
+call fringeQ(  0.496, -0.241,  0.213, -0.521)
+ </optr>
+</element>
+
+<element id="DTL:Q9" type="mq" s="     8148.235*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q9:CUR'/>
+ </epics>
+ <optr Btip="+DTL:Q9:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="DTL:FC9" type="marker" s="     8387.291*mm" l="0">
+</element>
+
+<element id="DTL:Q10" type="mq" s="     9421.916*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q10:CUR'/>
+ </epics>
+ <optr Btip="-DTL:Q10:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 9508.404*mm" l="0">
+<optr>
+call fringeQ(  0.450, -0.232,  0.170, -0.481)
+ </optr>
+</element>
+
+<element id="DTL:Q11" type="mq" s="     9551.904*mm" l="       87.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q11:CUR'/>
+ </epics>
+ <optr Btip="+DTL:Q11:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s=" 9648.900*mm" l="0">
+<optr>
+call fringeQ(  0.496, -0.241,  0.213, -0.521)
+ </optr>
+</element>
+
+<element id="DTL:Q12" type="mq" s="     9681.885*mm" l="       58.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':DTL:Q12:CUR'/>
+ </epics>
+ <optr Btip="-DTL:Q12:CUR*??*T/A" aperR="        1.199*cm" />
+</element>
+
+<element id="DTL:FC12" type="marker" s="     9746.529*mm" l="0">
+</element>
+
+<element id="HEBT:xRPM0" type="marker" s="    11050.867*mm" l="0">
+</element>
+
+<element id="HEBT:FC0" type="marker" s="    11133.484*mm" l="0">
+</element>
+
+<element id="fringeQ" type="fortline" s="11430.659*mm" l="0">
+<optr>
+call fringeQ(  0.480, -0.290,  0.200, -0.480)
+ </optr>
+</element>
+
+<element id="HEBT:Q1" type="mq" s="    11545.273*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q1:CUR'/>
+ </epics>
+ <optr Btip="-HEBT:Q1:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:Q2" type="mq" s="    11915.311*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q2:CUR'/>
+ </epics>
+ <optr Btip="+HEBT:Q2:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:Q3" type="mq" s="    12940.322*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q3:CUR'/>
+ </epics>
+ <optr Btip="-HEBT:Q3:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:Q5" type="mq" s="    13680.439*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q5:CUR'/>
+ </epics>
+ <optr Btip="+HEBT:Q5:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:RPM5" type="marker" s="    14460.444*mm" l="0">
+</element>
+
+<element id="HEBT:FC5" type="marker" s="    14565.852*mm" l="0">
+</element>
+
+<element id="HEBT:Q6" type="mq" s="    15450.506*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q6:CUR'/>
+ </epics>
+ <optr Btip="-HEBT:Q6:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s="15630.928*mm" l="0">
+<optr>
+call fringeQ(  0.520, -0.250,  0.270, -0.480)
+ </optr>
+</element>
+
+<element id="HEBT:Q7" type="mq" s="    15903.000*mm" l="      331.500*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q7:CUR'/>
+ </epics>
+ <optr Btip="+HEBT:Q7:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s="16130.881*mm" l="0">
+<optr>
+call fringeQ(  0.480, -0.290,  0.200, -0.480)
+ </optr>
+</element>
+
+<element id="HEBT:Q8" type="mq" s="    16355.506*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q8:CUR'/>
+ </epics>
+ <optr Btip="-HEBT:Q8:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:RPM8D" type="marker" s="    19978.980*mm" l="0">
+</element>
+
+<element id="fringeQ" type="fortline" s="20778.945*mm" l="0">
+<optr>
+call fringeQ(  0.520, -0.250,  0.270, -0.480)
+ </optr>
+</element>
+
+<element id="HEBT:Q9" type="mq" s="    21127.848*mm" l="      331.500*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q9:CUR'/>
+ </epics>
+ <optr Btip="-HEBT:Q9:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="fringeQ" type="fortline" s="21378.910*mm" l="0">
+<optr>
+call fringeQ(  0.480, -0.290,  0.200, -0.480)
+ </optr>
+</element>
+
+<element id="HEBT:Q10" type="mq" s="    21580.270*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q10:CUR'/>
+ </epics>
+ <optr Btip="+HEBT:Q10:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:LPM10" type="marker" s="    22570.160*mm" l="0">
+</element>
+
+<element id="HEBT:FC10" type="marker" s="    22570.160*mm" l="0">
+</element>
+
+<element id="HEBT:Q11" type="mq" s="    23370.152*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q11:CUR'/>
+ </epics>
+ <optr Btip="-HEBT:Q11:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:Q12" type="mq" s="    23900.205*mm" l="      182.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT:Q12:CUR'/>
+ </epics>
+ <optr Btip="+HEBT:Q12:CUR*??*T/A" aperR="        2.600*cm" />
+</element>
+
+<element id="HEBT:RPM12" type="marker" s="    24834.477*mm" l="0">
+</element>
+
+<element id="HEBT:FC12" type="marker" s="    24917.008*mm" l="0">
+</element>
+
+<element id="HEBT2:MB0       " type="mb  " s="    25477.168*mm" l="      392.711*mm">
+<optr theta="      -22.500*deg" entrEdge="       11.250*deg" exitEdge="       11.250*deg" fieldIndex="        0.000" k1="        0.550" k2="        0.000" edgeCurv="        0.000/cm" fullGap="        5.530*cm" />
+</element>
+
+<element id="HEBT2:Q1" type="mq" s="    26263.604*mm" l="       80.000*mm">
+ <epics>
+  <setpoint unit='A' min='-10' max='10' pv=':HEBT2:Q1:CUR'/>
+ </epics>
+ <optr Btip="+HEBT2:Q1:CUR*??*T/A" aperR="        1.000*cm" />
+</element>
+
+<element id="HEBT2:RPM1" type="marker" s="    26501.787*mm" l="0">
+</element>
+
+<element id="HEBT2:XSLIT1" type="marker" s="    26553.584*mm" l="0">
+</element>
+
+<element id="HEBT2:FC1" type="marker" s="    26553.584*mm" l="0">
+</element>
+
+<element id="endOfSequence" type="marker" s="26553.584*mm" l="0">
+ </element>
+</seq>

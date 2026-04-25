@@ -1,0 +1,21 @@
+<root xmlns:xi='http://www.w3.org/2001/XInclude' path="ios-mcis-hebt2-dragon">
+
+    <optr s11="0.9485*cm" s22="5.216*mrad" s33="0.5828*cm" s44="3.222*mrad" 
+        s55="12.4*cm" s66="2.64*mrad" r12="0.97" r13="0.0" r23="0.0" r14="-0.14" r24="0.0" r34="0.80" r15="-0.42" r25="-0.37" r35="0.0" r45="0.0" r16="-0.41" r26="-0.355" r36="0.0" r46="0.0" r56="1.0"
+        bunchcharge='1.6e-19*C'  start="HEBT2:FC1" end="DRA:FC1"/>
+    <!-- <optr s11="0.15*cm" s22="1.5*mrad" s33="0.15*cm" s44="1.5*mrad" 
+        s55="0.15" s66="0.015*rad" r12="0.0" r34="0.0" r56="0.0" 
+        bunchcharge='1.6e-19*C'  start="MEBT:RPM5" end="HEBT:FC5"/> -->
+    <tune mass="12.00*u" chargestate="3.0" energypernucleon="0.464*MeV/u"/>
+
+    <set pv="HEBT2:Q1:CUR" value="0.0*A"/>
+    <set pv="HEBT2:Q3:CUR" value="3.8*A"/>
+    <set pv="HEBT2:Q4:CUR" value="0.0*A"/>
+    <set pv="HEBT2:Q5:CUR" value="7.8*A"/>
+    <set pv="HEBT2:Q6:CUR" value="7.5*A"/>
+    <set pv="HEBT2:Q7:CUR" value="0.0*A"/>
+    <set pv="HEBT2:Q8:CUR" value="0.0*A"/>
+    <set pv="DRA:Q1:CUR" value="0.0*A"/>
+    <set pv="DRA:Q2:CUR" value="0.0*A"/>
+
+</root>

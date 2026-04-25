@@ -1,0 +1,4 @@
+<root xmlns:xi="http://www.w3.org/2001/XInclude" path="ios-mcis-hebt2-dragon">
+  <optr s11="0.65*cm" s22="18.0*mrad" s33="0.65*cm" s44="18.0*mrad" s55="0.001" s66="1.0*mrad" r12="-0.906" r34="0.906" r56="0.0" bunchcharge="1.6e-19*C" start="MEBT:RPM5" end="HEBT2:FC1"/>
+  <tune mass="12.00*u" chargestate="3.0" energypernucleon="0.153*MeV/u"/>
+</root>

@@ -1,0 +1,5 @@
+- misalignments=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/misalignments_yamls/run_263.yaml
+- sim.random_seed=0
+- iterations=60
+- initial_points=20
+- mean_function=null

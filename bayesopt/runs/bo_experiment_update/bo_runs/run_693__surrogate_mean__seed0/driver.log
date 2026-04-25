@@ -1,0 +1,226 @@
+COMMAND:
+/home/katrus/venv/default/bin/python3 /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/main.py hydra.run.dir=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/bo_runs/run_693__surrogate_mean__seed0 misalignments=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/misalignments_yamls/run_693.yaml sim.random_seed=0 iterations=80 initial_points=20 mean_function.surrogate_path=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/vae_project/vae/runs/surrogate_n720/sgt_wide/best.pt mean_function.delta_yaml=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/misalignments_yamls/run_693.yaml 'mean_function.delta_names=[MISALIGNX1,MISALIGNY1,MISALIGNX2,MISALIGNY2,HEBT2:Q2:MISALIGNX,HEBT2:Q2:MISALIGNY,HEBT2:Q3:MISALIGNX,HEBT2:Q3:MISALIGNY,HEBT2:Q4:MISALIGNX,HEBT2:Q4:MISALIGNY,HEBT2:Q5:MISALIGNX,HEBT2:Q5:MISALIGNY,HEBT2:Q6:MISALIGNX,HEBT2:Q6:MISALIGNY,HEBT2:Q7:MISALIGNX,HEBT2:Q7:MISALIGNY,HEBT2:Q8:MISALIGNX,HEBT2:Q8:MISALIGNY,DRA:Q1:MISALIGNX,DRA:Q1:MISALIGNY,DRA:Q2:MISALIGNX,DRA:Q2:MISALIGNY,HEBT2:MB1:MISALIGNX,HEBT2:MB1:MISALIGNY,HEBT2:MB1:MISALIGNZ,HEBT2:MB1:MBX,HEBT2:MB1:MBY]' 'mean_function.surrogate_input_names=[HEBT2:XCB2,HEBT2:YCB2,HEBT2:XCB4,HEBT2:YCB4,HEBT2:Q5:CUR,HEBT2:Q6:CUR,HEBT2:XCB6,HEBT2:YCB6,HEBT2:Q7:CUR]' mean_function.device=cpu
+
+accpy in DEVELOPMENT MODE, using locally defined ACC repo at:
+/home/katrus/repos/acc
+
+End of Beamline init...
+Please interface only via public methods 
+- clear_misalignments
+- measure_fc
+- measure_size
+- read_beamline_state
+- render
+- set_misalignments
+- update_beamline_state
+SimRunAdapter: using initial_transmission=1.0
+Simulation mode: tuning 9 elements
+  HEBT2:XCB2: [-0.02, 0.02]
+  HEBT2:YCB2: [-0.02, 0.02]
+  HEBT2:XCB4: [-0.02, 0.02]
+  HEBT2:YCB4: [-0.02, 0.02]
+  HEBT2:XCB6: [-0.02, 0.02]
+  HEBT2:YCB6: [-0.02, 0.02]
+  HEBT2:Q5:CUR: [0.0, 60.0]
+  HEBT2:Q6:CUR: [0.0, 60.0]
+  HEBT2:Q7:CUR: [0.0, 60.0]
+Collecting 20 initial training points
+Done Training
+Maximum sampling current: 0.20796966989199944 pA
+Max current from sampling: 0.20796966989199944 pA
+  0%|          | 0/80 [00:00<?, ?it/s]  0%|          | 0/80 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/bayesopt.py", line 108, in _optimize
+    model, train_x, train_y, obj_curr, obj_max = self.optimize_loop(
+                                                 ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/core_functions/getModel.py", line 40, in <lambda>
+    return lambda train_x, train_y, *args, **kwargs: types[function_name](self, train_x, train_y, *args, **kwargs)
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/core_functions/getModel.py", line 71, in _standard
+    fit_gpytorch_mll(mll)
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/fit.py", line 110, in fit_gpytorch_mll
+    return FitGPyTorchMLL(
+           ^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/utils/dispatcher.py", line 94, in __call__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/fit.py", line 212, in _fit_fallback
+    result = optimizer(mll, closure=closure, **optimizer_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/fit.py", line 94, in fit_gpytorch_mll_scipy
+    result = scipy_minimize(
+             ^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/core.py", line 115, in scipy_minimize
+    raw = minimize_with_timeout(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/utils/timeout.py", line 86, in minimize_with_timeout
+    return optimize.minimize(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_minimize.py", line 784, in minimize
+    res = _minimize_lbfgsb(fun, x0, args, jac, bounds,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_lbfgsb_py.py", line 413, in _minimize_lbfgsb
+    sf = _prepare_scalar_function(fun, x0, jac=jac, args=args, epsilon=eps,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_optimize.py", line 310, in _prepare_scalar_function
+    sf = ScalarFunction(fun, x0, args, grad, hess,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 283, in __init__
+    self._update_fun()
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 362, in _update_fun
+    fx = self._wrapped_fun(self.x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/_lib/_util.py", line 603, in __call__
+    fx = self.f(np.copy(x), *self.args)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_optimize.py", line 80, in __call__
+    self._compute_if_needed(x, *args)
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_optimize.py", line 74, in _compute_if_needed
+    fg = self.fun(x, *args)
+         ^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/core.py", line 94, in __call__
+    value, grads = _handle_numerical_errors(e, x=self.state, dtype=np_float64)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/utils/common.py", line 34, in _handle_numerical_errors
+    raise error  # pragma: nocover
+    ^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/core.py", line 82, in __call__
+    value_tensor, grad_tensors = self.closure(**kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/core.py", line 44, in __call__
+    value = self.forward(**kwargs).sum()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/model_closures.py", line 140, in closure
+    model_output = model(*model.train_inputs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/models/exact_gp.py", line 281, in __call__
+    res = super().__call__(*inputs, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/module.py", line 83, in __call__
+    outputs = self.forward(*inputs, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/models/gp_regression.py", line 212, in forward
+    mean_x = self.mean_module(x)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/means/mean.py", line 24, in __call__
+    res = super().__call__(x)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/module.py", line 83, in __call__
+    outputs = self.forward(*inputs, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/means/mean.py", line 17, in forward
+    raise NotImplementedError()
+NotImplementedError
+Error executing job with overrides: ['misalignments=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/misalignments_yamls/run_693.yaml', 'sim.random_seed=0', 'iterations=80', 'initial_points=20', 'mean_function.surrogate_path=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/vae_project/vae/runs/surrogate_n720/sgt_wide/best.pt', 'mean_function.delta_yaml=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/misalignments_yamls/run_693.yaml', 'mean_function.delta_names=[MISALIGNX1,MISALIGNY1,MISALIGNX2,MISALIGNY2,HEBT2:Q2:MISALIGNX,HEBT2:Q2:MISALIGNY,HEBT2:Q3:MISALIGNX,HEBT2:Q3:MISALIGNY,HEBT2:Q4:MISALIGNX,HEBT2:Q4:MISALIGNY,HEBT2:Q5:MISALIGNX,HEBT2:Q5:MISALIGNY,HEBT2:Q6:MISALIGNX,HEBT2:Q6:MISALIGNY,HEBT2:Q7:MISALIGNX,HEBT2:Q7:MISALIGNY,HEBT2:Q8:MISALIGNX,HEBT2:Q8:MISALIGNY,DRA:Q1:MISALIGNX,DRA:Q1:MISALIGNY,DRA:Q2:MISALIGNX,DRA:Q2:MISALIGNY,HEBT2:MB1:MISALIGNX,HEBT2:MB1:MISALIGNY,HEBT2:MB1:MISALIGNZ,HEBT2:MB1:MBX,HEBT2:MB1:MBY]', 'mean_function.surrogate_input_names=[HEBT2:XCB2,HEBT2:YCB2,HEBT2:XCB4,HEBT2:YCB4,HEBT2:Q5:CUR,HEBT2:Q6:CUR,HEBT2:XCB6,HEBT2:YCB6,HEBT2:Q7:CUR]', 'mean_function.device=cpu']
+Traceback (most recent call last):
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/main.py", line 29, in <module>
+    main()
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+        ^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/core/utils.py", line 260, in return_value
+    raise self._return_value
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/main.py", line 21, in main
+    model = BO.optimize()     
+            ^^^^^^^^^^^^^
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/bayesopt.py", line 205, in optimize
+    return types[self.config.model]()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/bayesopt.py", line 108, in _optimize
+    model, train_x, train_y, obj_curr, obj_max = self.optimize_loop(
+                                                 ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/core_functions/getModel.py", line 40, in <lambda>
+    return lambda train_x, train_y, *args, **kwargs: types[function_name](self, train_x, train_y, *args, **kwargs)
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/core_functions/getModel.py", line 71, in _standard
+    fit_gpytorch_mll(mll)
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/fit.py", line 110, in fit_gpytorch_mll
+    return FitGPyTorchMLL(
+           ^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/utils/dispatcher.py", line 94, in __call__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/fit.py", line 212, in _fit_fallback
+    result = optimizer(mll, closure=closure, **optimizer_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/fit.py", line 94, in fit_gpytorch_mll_scipy
+    result = scipy_minimize(
+             ^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/core.py", line 115, in scipy_minimize
+    raw = minimize_with_timeout(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/utils/timeout.py", line 86, in minimize_with_timeout
+    return optimize.minimize(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_minimize.py", line 784, in minimize
+    res = _minimize_lbfgsb(fun, x0, args, jac, bounds,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_lbfgsb_py.py", line 413, in _minimize_lbfgsb
+    sf = _prepare_scalar_function(fun, x0, jac=jac, args=args, epsilon=eps,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_optimize.py", line 310, in _prepare_scalar_function
+    sf = ScalarFunction(fun, x0, args, grad, hess,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 283, in __init__
+    self._update_fun()
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 362, in _update_fun
+    fx = self._wrapped_fun(self.x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/_lib/_util.py", line 603, in __call__
+    fx = self.f(np.copy(x), *self.args)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_optimize.py", line 80, in __call__
+    self._compute_if_needed(x, *args)
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/scipy/optimize/_optimize.py", line 74, in _compute_if_needed
+    fg = self.fun(x, *args)
+         ^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/core.py", line 94, in __call__
+    value, grads = _handle_numerical_errors(e, x=self.state, dtype=np_float64)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/utils/common.py", line 34, in _handle_numerical_errors
+    raise error  # pragma: nocover
+    ^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/core.py", line 82, in __call__
+    value_tensor, grad_tensors = self.closure(**kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/core.py", line 44, in __call__
+    value = self.forward(**kwargs).sum()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/optim/closures/model_closures.py", line 140, in closure
+    model_output = model(*model.train_inputs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/models/exact_gp.py", line 281, in __call__
+    res = super().__call__(*inputs, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/module.py", line 83, in __call__
+    outputs = self.forward(*inputs, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/botorch/models/gp_regression.py", line 212, in forward
+    mean_x = self.mean_module(x)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/means/mean.py", line 24, in __call__
+    res = super().__call__(x)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/module.py", line 83, in __call__
+    outputs = self.forward(*inputs, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/katrus/venv/default/lib/python3.12/site-packages/gpytorch/means/mean.py", line 17, in forward
+    raise NotImplementedError()
+NotImplementedError

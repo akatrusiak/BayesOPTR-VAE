@@ -1,0 +1,46 @@
+{
+  "checkpoints": [
+    {
+      "path": "runs/vae_dz5/best.pt",
+      "d_latent": 5,
+      "aggregate": {
+        "val": {
+          "label": "val",
+          "n_ok": 48,
+          "t_err_mean": -0.12347721778475058,
+          "t_err_std": 0.234871031477674,
+          "t_err_abs_mean": 0.15562923937905818,
+          "t_err_abs_median": 0.026591323520775534,
+          "delta_mse_std_mean": 0.9953065011679806,
+          "delta_mse_std_median": 0.9647334098955979
+        },
+        "train": {
+          "label": "train",
+          "n_ok": 0
+        },
+        "all": {
+          "label": "all",
+          "n_ok": 48,
+          "t_err_mean": -0.12347721778475058,
+          "t_err_std": 0.234871031477674,
+          "t_err_abs_mean": 0.15562923937905818,
+          "t_err_abs_median": 0.026591323520775534,
+          "delta_mse_std_mean": 0.9953065011679806,
+          "delta_mse_std_median": 0.9647334098955979
+        },
+        "n_failed": 0,
+        "wall_seconds": 426.5344862937927
+      },
+      "per_run_path": "runs/verification_diagnostic/verify_dz5__zero_std.json"
+    }
+  ],
+  "data_dirs": [
+    "../../simulation_data/data/output_good_4"
+  ],
+  "verify_dir": "../../simulation_data/transoptr_verification",
+  "config_path": "../../simulation_data/transoptr_verification/config.yaml",
+  "axis": "verify",
+  "n_runs": 240,
+  "seed": 0,
+  "delta_source": "zero_std"
+}

@@ -1,0 +1,96 @@
+jaya_url: "https://vpn.beta.hla.triumf.ca/jaya/"
+initial_transmission: 1e7 #write value initial cup reading in pA
+beam_energy: 40.7 #beam energy in keV
+beam_mass: 40 # beam mass in amu (only needed for magnetic steering)
+beam_chargestate: 1 # beam chargestate (only needed for magnetic steering)
+steering_elements:
+  IOS:XCB1:VOL:
+    type: steerer
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 325
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonis: IOS:CCB1:VOL
+  IOS:YCB1:VOL:
+    type: steerer
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 325.0
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonis: IOS:CCB1:VOL
+  IOS:YCB1A:VOL:
+    type: steerer
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 325.0
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonis: IOS:CCB1:VOL
+  IOS:YCB3:VOL:
+    type: steerer
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 325.0
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonis: IOS:CCB1:VOL
+  IOS:YCB4:VOL:
+    type: steerer
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 325.0
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonis: IOS:CCB4:VOL
+  IOS:YCB6:VOL:
+    type: steerer
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 325.0
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonis: IOS:CCB4:VOL
+measurement_device:
+  type: fc
+  loc: 304.174
+  pv: IOS:FC6:SCALECUR
+  measure_points: 20
+  trim_ratio: 0.2
+  ptime: 0.01
+  scale_factor: 1000000000000
+common_elements:
+  IOS:CCB1:VOL:
+    type: steerer
+    loc: 0.0
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 500.0
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonto:
+    - IOS:XCB1:VOL
+    - IOS:YCB1:VOL
+    - IOS:YCB1A:VOL
+    - IOS:YCB3:VOL
+  IOS:CCB4:VOL:
+    type: steerer
+    loc: 226.53300000000002
+    lower_bound: 0.0
+    upper_bound: 1000.0
+    starting_mean: 500.0
+    starting_var: 100.0
+    max_incremental_change: 1000.0
+    set_zero_crossing: false
+    commonto:
+    - IOS:YCB4:VOL
+    - IOS:YCB6:VOL
+#scale factor is a fudge factor to make all FC measurements be in pA

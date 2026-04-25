@@ -1,0 +1,139 @@
+#gnuplot
+#set terminal epscairo color enhanced font "Times-Roman, 18" size 3.5,3.5 lw 2
+set term postscript eps color enhanced "Times-Roman" 18 lw 2 size 3.5,3.5
+set print "-"
+
+#UNCOMMENT THESE LINES FOR LOCAL EXECUTE
+set output "ellipses.eps"
+zoutput= "zellipses.eps"
+fortfile="./fort.envelope"
+#extracts 2 sizes and correlation between them from the last line of the transoptr fort.envelope output file
+#print "producing ellipses at end"
+#stats fortfile  using 1:(k=(column("E"))) #kinetic energy (unused)
+#stats ''  using 1:(xsz=column("x-envelope"))
+#stats ''  using 1:(ysz=column("x'-envelope"))
+#stats ''  using 1:(xsz2=column("y-envelope"))
+#stats ''  using 1:(ysz2=column("y'-envelope"))
+#stats ''  using 1:(xsz3=column("z-envelope"))
+#stats ''  using 1:(ysz3=column("z'-envelope"))
+#stats ''  using 1:(r=column("r12"))
+#stats ''  using 1:(r2=column("r34"))
+#stats ''  using 1:(r3=column("r56"))
+
+
+##find extent of ellipse via system, check fort.envelope for last line
+s=system("tail -n1 ".fortfile." | awk '{print $1}'")
+xmax=system("tail -n1 ".fortfile." | awk '{print $2}'")
+ymax=system("tail -n1 ".fortfile." | awk '{print $3}'")
+xmax2=system("tail -n1 ".fortfile." | awk '{print $4}'") #y
+ymax2=system("tail -n1 ".fortfile." | awk '{print $5}'") #y'
+xmax3=system("tail -n1 ".fortfile." | awk '{print $6}'") #z
+ymax3=system("tail -n1 ".fortfile." | awk '{print $7}'") #z'
+
+#UNCOMMENT THESE LINES FOR START ELLIPSE
+
+#extract 2 sizes and correlation between them from the first line of the transopr fort.encelope output file
+print "producing ellipses at end"
+s =    real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $1}'"))
+xsz =  real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $2}'"))
+ysz =  real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $3}'"))
+xsz2 = real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $4}'"))
+ysz2 = real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $5}'"))
+xsz3 = real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $6}'"))
+ysz3 = real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $7}'"))
+r =    real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $19}'"))
+r2 =   real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $24}'"))
+r3 =   real(system("head -n3 ".fortfile." | tail -n1 | awk '{print $33}'"))
+
+#scaling
+xconv=10
+xpconv=1000
+
+
+#x
+emit=sqrt(xsz**2*ysz**2*(1-r**2))
+alpha = -r*xsz*ysz/emit
+beta = xsz**2/emit
+#y
+emit2=sqrt(xsz2**2*ysz2**2*(1-r2**2))
+alpha2 = -r2*xsz2*ysz2/emit2
+beta2 = xsz2**2/emit2
+
+#labels
+set label 1 'r_{12}='.sprintf("%4.3f",r) at graph  -0.15,-0.10
+set label 2 'r_{34}='.sprintf("%4.3f",r2) at graph -0.15,-0.16
+emisclf=10*1000
+set label 3 '4{/Symbol e}_{rmsx}='.sprintf("%4.3e [mm*mrad]",emit*emisclf)  at graph 0.55,-0.10 font "Times-Roman, 16" 
+set label 4 '4{/Symbol e}_{rmsy}='.sprintf("%4.3e [mm*mrad]",emit2*emisclf) at graph 0.55,-0.16 font "Times-Roman, 16" 
+set label 5 's='.sprintf("%4.2fcm",real(s)) at graph 0.08,-0.16
+
+
+#centroid offsets (zero)
+x_offset=0.0 #STATS_mean_x
+y_offset=0.0 #STATS_mean_y
+
+set xlabel 'x_i [mm]' offset -5,0,0
+set ylabel "x_i' [mrad]"
+
+
+#plot scaling control
+scl=3
+
+#plotting
+set multiplot
+set xrange [-scl*xmax*xconv:xconv*xmax*scl]
+set yrange [-scl*ymax*xpconv:xpconv*ymax*scl]
+set xzeroaxis
+set yzeroaxis
+set grid
+set trange [-pi:pi]
+set parametric
+set key above left maxrows 1 font "Times-Roman, 25"
+plot xconv*cos(t)*sqrt(beta*emit),xpconv*(sin(t)-alpha*cos(t))/sqrt(beta/emit) title "4{/Symbol e}_{rmsx}" lc rgb 'red' lw 2
+set key above right maxrows 1 width -5 font "Times-Roman, 25"
+plot xconv*cos(t)*sqrt(beta2*emit2),xpconv*(sin(t)-alpha2*cos(t))/sqrt(beta2/emit2) title "4{/Symbol e}_{rmsy}" lc rgb '#00CC66' lw 2 # dashtype 2
+unset parametric
+
+unset label 1
+unset label 2
+unset label 3
+unset label 4
+unset label 5
+unset multiplot
+
+#LONGITUDIUNAL__________________________________
+set output zoutput
+set multiplot
+#z
+emit3=sqrt(xsz3**2*ysz3**2*(1-r3**2))
+alpha3 = -r3*xsz3*ysz3/emit3
+beta3 = xsz3**2/emit3
+
+
+set xlabel 'z_i [mm]' offset -5,0,0
+set ylabel "z_i' [mrad]"
+
+
+#labels (z)
+set label 6 'r_{56}='.sprintf("%4.3f",r3) at graph  -0.15,-0.10
+set label 7 '4{/Symbol e}_{rmsz}='.sprintf("%4.3e [mm*mrad]",emit3*emisclf)  at graph 0.55,-0.10 font "Times-Roman, 16" 
+set label 8 's='.sprintf("%4.2fcm",real(s)) at graph 0.08,-0.16
+
+
+#plotting
+set xrange [-scl*xmax3*xconv:xconv*xmax3*scl]
+set yrange [-scl*ymax3*xpconv:xpconv*ymax3*scl]
+set xzeroaxis
+set yzeroaxis
+set grid
+set trange [-pi:pi]
+set parametric
+set key above left maxrows 1
+plot xconv*cos(t)*sqrt(beta3*emit3),xpconv*(sin(t)-alpha3*cos(t))/sqrt(beta3/emit3) title "4{/Symbol e}_{rmsz}" lc rgb '#FF007F' lw 2
+#plot xconv*cos(t)*sqrt(beta2*emit2),xpconv*(sin(t)-alpha2*cos(t))/sqrt(beta2/emit2) title "4{/Symbol e}_{rmsy}" lc rgb '#00CC66' lw 2 dashtype 2
+unset parametric
+#print("x=%5.3f",xsz3)
+#print("zp=%5.3f",ysz3)
+#print("r56=%5.3f",r3)i
+#
+print "...done!"

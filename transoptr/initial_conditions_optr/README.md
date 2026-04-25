@@ -1,0 +1,1 @@
+Trying to create initial conditions at HEBT2:FC1 accurately by simulating all the way from the MEBT foil. Various attempts here, but ultimately the model in mcat_dtl_dragon_update was used.

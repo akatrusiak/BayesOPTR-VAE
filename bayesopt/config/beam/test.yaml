@@ -1,0 +1,248 @@
+jaya_url: "https://vpn.beta.hla.triumf.ca/jaya/"
+initial_transmission: #write value initial cup reading in pA
+beam_energy: #beam energy in keV
+beam_mass: # beam mass in amu (only needed for magnetic steering)
+beam_chargestate: # beam chargestate (only needed for magnetic steering)
+steering_elements:
+  HEBT:XCB0:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:YCB0:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:Q1:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:Q2:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:XCB2:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:YCB2:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:Q3:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:Q5:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:XCB5:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT:YCB5:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT:Q6:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:Q7:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:Q8:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:XCB8:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:YCB8:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:Q9:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:Q10:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:XCB10:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:YCB10:CUR:
+    type: steerer
+    lower_bound: -100.0
+    upper_bound: 100.0
+    starting_mean: 0.0
+    starting_var: 20.0
+    max_incremental_change: 200.0
+    set_zero_crossing: true
+  HEBT:Q11:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:Q12:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT:XCB12:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT:YCB12:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT2:Q1:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 125.0
+    starting_mean: 62.5
+    starting_var: 12.5
+    max_incremental_change: 125.0
+    set_zero_crossing: false
+  HEBT2:Q2:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 125.0
+    starting_mean: 62.5
+    starting_var: 12.5
+    max_incremental_change: 125.0
+    set_zero_crossing: false
+  HEBT2:XCB2:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT2:YCB2:CUR:
+    type: steerer
+    lower_bound: -3.0
+    upper_bound: 3.0
+    starting_mean: 0.0
+    starting_var: 0.6
+    max_incremental_change: 6.0
+    set_zero_crossing: true
+  HEBT2:Q3:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+  HEBT2:Q4:CUR:
+    type: quad
+    lower_bound: 0.0
+    upper_bound: 60.0
+    starting_mean: 30.0
+    starting_var: 6.0
+    max_incremental_change: 60.0
+    set_zero_crossing: false
+measurement_device:
+  type: fc
+  loc: 1921.438
+  pv: HEBT2:FC4:SCALECUR
+  measure_points: 20
+  trim_ratio: 0.2
+  ptime: 0.01
+  scale_factor: 1000000000000
+common_elements: {}
+#scale factor is a fudge factor to make all FC measurements be in pA

@@ -1,0 +1,390 @@
+ TRANSOPTR  Copyright (C) 2021, Heighway et al., CNL, Baartman et al. TRIUMF, Canada
+ This program comes with ABSOLUTELY NO WARRANTY;
+ for details read enclosed LICENSE.txt file.
+ This is free software, and you are welcome to redistrib it under certain conditions;
+ read enclosed LICENSE.txt file for details.
+ 
+ Time: 103523  Date: 20260419
+ ***WARNING: Not all elements will have been generalized /***for CHARGE state not equal to 1.
+ Starting absolute coordinates for unit 3:    0.00000000       0.00000000       0.00000000    
+ z-value at which calculations start        :    0.00000000    
+ # of (z,Bz) values to be read from unit 2  :            0
+ Transverse   Length unit =  1.000 cm 
+ Transverse   Angle  unit = 1000.0 mrad
+ Longitudinal Length unit =  1.000 cm 
+   Momentun  Spread  unit =  100.0 %  
+   Beamline   Length unit =  1.000 cm 
+   Beamline  Length increment for plotting =  1.000 cm 
+ 
+
+ K.Energy=    5.56800     MeV, K.Energy per amu=  0.464001    
+ Mass =      11177.9     MeV
+ Charge =    3.00000    
+ Bunch Charge =   0.160000E-18 Coulombs
+ Brho   =   0.392335     Tesla-m         392.335     kGauss-cm
+ Momentum=   352.857     MeV/c
+
+ Sigma Matrix Formalism Used With 3-D First Order Space Charge    (IVOPT=5)
+
+
+
+ Input Vector Elements
+     x     0.500000       cm 
+ theta     0.521600E-02   rad
+     y     0.300000       cm 
+   phi     0.322200E-02   rad
+     l      12.4000       cm 
+ delta     0.264000E-02   rad
+
+ Input Normalized Sigma Matrix Elements
+        I         J         R(I,J)
+
+        1         2        0.970000
+        1         4       -0.140000
+        1         5       -0.420000
+        1         6       -0.410000
+        2         1        0.970000
+        2         5       -0.370000
+        2         6       -0.355000
+        3         4        0.800000
+        4         1       -0.140000
+        4         3        0.800000
+        5         1       -0.420000
+        5         2       -0.370000
+        5         6        1.000000
+        6         1       -0.410000
+        6         2       -0.355000
+        6         5        1.000000
+
+ x and y emittances  0.567454E-03  0.579960E-03 x and y normalized  0.179130E-04  0.183078E-04 cm  rad
+ 
+ ***WARNING: x-y coupling so emittances may have limited meaning
+
+ Parameter       Value      Lower Limit     Upper Limit    Varied=1,Fixed=0
+
+       1        0.634234E-01   -1.00000        1.00000           0
+       2        0.429026E-01   -1.00000        1.00000           0
+       3       -0.358989E-03   -1.00000        1.00000           0
+       4       -0.534601E-02   -1.00000        1.00000           0
+       5       -0.958708E-01   -1.00000        1.00000           0
+       6        0.403992E-02   -1.00000        1.00000           0
+       7         0.00000        0.00000        125.000           0
+       8        0.975898E-01   -1.00000        1.00000           0
+       9        0.842155E-01   -1.00000        1.00000           0
+      10       -0.126935E-01   -1.00000        1.00000           0
+      11        0.159158E-01   -1.00000        1.00000           0
+      12         0.00000       -1.00000        1.00000           0
+      13         0.00000       -2.00000        2.00000           1
+      14         0.00000       -1.00000        1.00000           1
+      15       -0.301765E-01   -1.00000        1.00000           0
+      16        0.902989E-01   -1.00000        1.00000           0
+      17         3.80000        0.00000        60.0000           0
+      18       -0.935874E-01   -1.00000        1.00000           0
+      19       -0.837476E-01   -1.00000        1.00000           0
+      20         0.00000        0.00000        60.0000           0
+      21         0.00000       -2.00000        2.00000           1
+      22         0.00000       -1.00000        1.00000           1
+      23        0.598243E-02   -1.00000        1.00000           0
+      24       -0.834708E-01   -1.00000        1.00000           0
+      25         7.80000        0.00000        60.0000           1
+      26        0.534898E-01   -1.00000        1.00000           0
+      27       -0.915745E-01   -1.00000        1.00000           0
+      28         7.50000        0.00000        60.0000           1
+      29         0.00000       -2.00000        2.00000           1
+      30         0.00000       -1.00000        1.00000           1
+      31        0.397233E-01   -1.00000        1.00000           0
+      32        0.445016E-01   -1.00000        1.00000           0
+      33         0.00000        0.00000        60.0000           1
+      34        0.968752E-01   -1.00000        1.00000           0
+      35       -0.310654E-01   -1.00000        1.00000           0
+      36         0.00000        0.00000        60.0000           0
+      37        0.286047E-01   -1.00000        1.00000           0
+      38       -0.964373E-01   -1.00000        1.00000           0
+      39         0.00000        0.00000        350.000           0
+      40       -0.867303E-01   -1.00000        1.00000           0
+      41       -0.707844E-01   -1.00000        1.00000           0
+      42         0.00000        0.00000        350.000           0
+ SETUP: Z=    0.00,  emittances=   0.000567    0.000580   cm * rad (see Becker on "why pi?")
+ ***WARNING: x-y coupling so emittances may have limited meaning
+  coupling parameter =    7.00000003E-02
+         HEBT2:Q2: abx,aby=     0.000000    0.000000
+ dipole ent. edge: abx,aby=     0.022836    0.003489
+ dipole exit edge: abx,aby=     0.047246    0.005573
+         HEBT2:Q3: abx,aby=     0.006444    0.002193
+         HEBT2:Q4: abx,aby=     0.000050    0.000040
+         HEBT2:Q5: abx,aby=     0.007510    0.029510
+         HEBT2:Q6: abx,aby=     0.003563    0.004295
+         HEBT2:Q7: abx,aby=     0.000003    0.000004
+         HEBT2:Q8: abx,aby=     0.000000    0.000001
+ Dragon-Gas-Slit-: slit transmission and emittance ratios:          Tx,Ex,Ty,Ey =     0.983935    0.944644    1.000000    1.000000
+           DRA:Q1: abx,aby=     0.000000    0.000000
+           DRA:Q2: abx,aby=     0.000000    0.000000
+
+ ---------- Element: DRA:, Z=   938.31    ----------Transfer Matrix----------
+
+      x           theta           y           phi             l           delta
+
+ -1.613264     -238.1146     0.3992354E-09-0.1001568E-06-0.7551938E-10 -25.99785    
+-0.2613611E-02 -1.005617     0.1346873E-11-0.3316464E-09-0.2945162E-12-0.2887101    
+ 0.8181520E-09-0.6302073E-07 -1.570544     -349.5932     0.1472478E-10-0.5052006E-07
+ 0.2748118E-11-0.2086826E-09-0.3904950E-02 -1.505944     0.4982803E-13-0.1681470E-09
+-0.3978222     -42.60262    -0.5991479E-11 0.1455848E-08  1.000000      936.3640    
+ 0.2320099E-12-0.1071371E-10-0.2075737E-13 0.4755162E-11 0.1149910E-12  1.000000    
+  
+
+ Output Vectors are on unit 16; only FIT elements listed here.
+                                                                            Beam matrix element  * 1  0.0000      10.000      1  FIT
+                                                                                 z=     400.07        2.5971     Value
+                                                                            Beam matrix element  * 3  0.0000      10.000      1  FIT
+                                                                                 z=     400.07       -2.5599     Value
+                                                                            Beam matrix element  * 1  0.0000      10.000      1  FIT
+                                                                                 z=     640.67        2.3320     Value
+                                                                            Beam matrix element  * 3  0.0000      10.000      1  FIT
+                                                                                 z=     640.67      -0.37045     Value
+                                                                                 waist: alpha=0  1 0  0.0000      10.000      1  FIT
+                                                                                 z=     715.12        2.8237     Value
+                                                                                 waist: alpha=0  3 0  0.0000      10.000      1  FIT
+                                                                                 z=     715.12        2.2642     Value
+                                                                            Beam matrix element  * 1  0.0000      10.000      1  FIT
+                                                                                 z=     720.55        1.3584     Value
+                                                                            Beam matrix element  * 3  0.0000      10.000      1  FIT
+                                                                                 z=     720.55       0.31728     Value
+ Total TOF=    9.91975639E-07  sec.
+ no. of calls to sc=       18910
+
+ Runge-Kutta engine= 0, Final step=      1.280cm, EPS= .100E-03
+
+ Symplectic.Error/EPS; Avg.=    0.024, St.Dev.=    0.016, Max. =    0.053
+
+ 
+sqrt(chi) = .5823E+02
+variables =      0.0000     0.0000     0.0000     0.0000     7.8000     7.5000     0.0000     0.0000     0.0000
+sqrt(chi) = .1772E+03
+variables =     -0.0168     0.0399     0.0504    -0.0065     7.2866     9.1365    -0.0495     0.0215     1.6251
+sqrt(chi) = .5225E+02
+variables =     -0.0202     0.0091     0.0332     0.0054     7.7186     8.8389    -0.0189    -0.0280     1.6355
+sqrt(chi) = .3637E+02
+variables =     -0.0096     0.0085     0.0201     0.0070     7.6854     7.7520    -0.0157    -0.0159     0.6841
+sqrt(chi) = .3220E+02
+variables =     -0.0197     0.0077     0.0261     0.0074     7.6572     7.8130    -0.0132    -0.0178     0.6232
+sqrt(chi) = .2809E+02
+variables =     -0.0247     0.0099     0.0322     0.0044     7.4452     7.0086    -0.0089    -0.0090     0.1154
+sqrt(chi) = .2652E+02
+variables =     -0.0151     0.0087     0.0214     0.0022     7.5453     7.1854    -0.0112    -0.0074     0.1152
+sqrt(chi) = .2466E+02
+variables =     -0.0207     0.0095     0.0262     0.0010     7.4824     6.9738    -0.0093    -0.0067     0.0812
+sqrt(chi) = .2000E+02
+variables =     -0.0182     0.0107     0.0211    -0.0027     7.2772     6.4382    -0.0087    -0.0009    -0.0477
+sqrt(chi) = .1285E+02
+variables =     -0.0146     0.0104     0.0120    -0.0096     6.8970     5.7389    -0.0089     0.0099    -0.2329
+sqrt(chi) = .1016E+02
+variables =     -0.0143     0.0100     0.0123    -0.0103     6.8457     5.5898    -0.0086     0.0112    -0.2424
+sqrt(chi) = .7740E+01
+variables =     -0.0159     0.0102     0.0157    -0.0111     6.7472     5.3751    -0.0092     0.0130    -0.1784
+sqrt(chi) = .6347E+01
+variables =     -0.0166     0.0104     0.0169    -0.0135     6.5467     4.9243    -0.0097     0.0166    -0.1117
+sqrt(chi) = .5075E+01
+variables =     -0.0179     0.0100     0.0187    -0.0162     6.3192     4.3743    -0.0098     0.0205    -0.0586
+sqrt(chi) = .4721E+01
+variables =     -0.0175     0.0097     0.0177    -0.0165     6.2145     4.1203    -0.0095     0.0207    -0.0194
+sqrt(chi) = .4651E+01
+variables =     -0.0173     0.0097     0.0174    -0.0164     6.2316     4.1637    -0.0095     0.0206    -0.0231
+sqrt(chi) = .4451E+01
+variables =     -0.0168     0.0097     0.0159    -0.0149     6.2765     4.2492    -0.0087     0.0183    -0.0087
+sqrt(chi) = .4348E+01
+variables =     -0.0169     0.0095     0.0157    -0.0139     6.2911     4.2747    -0.0083     0.0169     0.0134
+sqrt(chi) = .4305E+01
+variables =     -0.0168     0.0097     0.0155    -0.0140     6.2924     4.2756    -0.0082     0.0170     0.0053
+sqrt(chi) = .4195E+01
+variables =     -0.0171     0.0097     0.0158    -0.0135     6.3036     4.3136    -0.0080     0.0161     0.0250
+sqrt(chi) = .4001E+01
+variables =     -0.0169     0.0098     0.0147    -0.0116     6.3284     4.3937    -0.0070     0.0130     0.0739
+sqrt(chi) = .3211E+01
+variables =     -0.0170     0.0100     0.0134    -0.0096     6.1768     4.1623    -0.0049     0.0094     0.1965
+sqrt(chi) = .2691E+01
+variables =     -0.0166     0.0097     0.0097    -0.0050     6.0256     3.9657    -0.0012     0.0021     0.3744
+sqrt(chi) = .2337E+01
+variables =     -0.0166     0.0096     0.0100    -0.0053     6.0139     3.9340    -0.0014     0.0025     0.3758
+sqrt(chi) = .2233E+01
+variables =     -0.0169     0.0095     0.0103    -0.0051     5.9851     3.8836    -0.0012     0.0023     0.3953
+sqrt(chi) = .2222E+01
+variables =     -0.0170     0.0095     0.0103    -0.0052     5.9656     3.8472    -0.0012     0.0026     0.3953
+sqrt(chi) = .2218E+01
+variables =     -0.0169     0.0094     0.0102    -0.0051     5.9484     3.8137    -0.0010     0.0024     0.3983
+sqrt(chi) = .2201E+01
+variables =     -0.0169     0.0095     0.0100    -0.0050     5.9378     3.7871    -0.0008     0.0022     0.3872
+sqrt(chi) = .2177E+01
+variables =     -0.0169     0.0095     0.0099    -0.0051     5.9341     3.7519    -0.0008     0.0025     0.3414
+sqrt(chi) = .2084E+01
+variables =     -0.0169     0.0095     0.0100    -0.0054     5.9393     3.6642    -0.0009     0.0030     0.1806
+sqrt(chi) = .1986E+01
+variables =     -0.0169     0.0095     0.0099    -0.0049     5.9799     3.6839    -0.0008     0.0022     0.0947
+sqrt(chi) = .1930E+01
+variables =     -0.0168     0.0095     0.0094    -0.0046     5.9515     3.5939    -0.0003     0.0017     0.0416
+sqrt(chi) = .1859E+01
+variables =     -0.0167     0.0095     0.0089    -0.0045     5.8953     3.4530     0.0001     0.0015    -0.0024
+sqrt(chi) = .1831E+01
+variables =     -0.0167     0.0095     0.0088    -0.0047     5.8743     3.4171     0.0001     0.0017     0.0080
+sqrt(chi) = .1809E+01
+variables =     -0.0167     0.0095     0.0090    -0.0046     5.9093     3.4863    -0.0001     0.0016     0.0061
+sqrt(chi) = .1787E+01
+variables =     -0.0168     0.0094     0.0096    -0.0051     5.9221     3.5085    -0.0006     0.0023     0.0030
+sqrt(chi) = .1770E+01
+variables =     -0.0168     0.0094     0.0095    -0.0050     5.8979     3.4574    -0.0003     0.0021    -0.0011
+sqrt(chi) = .1768E+01
+variables =     -0.0168     0.0094     0.0096    -0.0051     5.9119     3.4870    -0.0005     0.0023     0.0018
+sqrt(chi) = .1765E+01
+variables =     -0.0169     0.0095     0.0098    -0.0051     5.9186     3.4984    -0.0006     0.0023    -0.0004
+sqrt(chi) = .1764E+01
+variables =     -0.0169     0.0095     0.0097    -0.0051     5.9103     3.4823    -0.0005     0.0023     0.0002
+sqrt(chi) = .1763E+01
+values =     -0.0169     0.0095     0.0097    -0.0051     5.9114     3.4846    -0.0005     0.0022     0.0001
+
+
+  Successful minimization
+
+ Parameter       Value      Lower Limit     Upper Limit    Varied=1,Fixed=0
+
+       1        0.634234E-01   -1.00000        1.00000           0
+       2        0.429026E-01   -1.00000        1.00000           0
+       3       -0.358989E-03   -1.00000        1.00000           0
+       4       -0.534601E-02   -1.00000        1.00000           0
+       5       -0.958708E-01   -1.00000        1.00000           0
+       6        0.403992E-02   -1.00000        1.00000           0
+       7         0.00000        0.00000        125.000           0
+       8        0.975898E-01   -1.00000        1.00000           0
+       9        0.842155E-01   -1.00000        1.00000           0
+      10       -0.126935E-01   -1.00000        1.00000           0
+      11        0.159158E-01   -1.00000        1.00000           0
+      12         0.00000       -1.00000        1.00000           0
+      13       -0.168677E-01   -2.00000        2.00000           1
+      14        0.946234E-02   -1.00000        1.00000           1
+      15       -0.301765E-01   -1.00000        1.00000           0
+      16        0.902989E-01   -1.00000        1.00000           0
+      17         3.80000        0.00000        60.0000           0
+      18       -0.935874E-01   -1.00000        1.00000           0
+      19       -0.837476E-01   -1.00000        1.00000           0
+      20         0.00000        0.00000        60.0000           0
+      21        0.965737E-02   -2.00000        2.00000           1
+      22       -0.507958E-02   -1.00000        1.00000           1
+      23        0.598243E-02   -1.00000        1.00000           0
+      24       -0.834708E-01   -1.00000        1.00000           0
+      25         5.91140        0.00000        60.0000           1
+      26        0.534898E-01   -1.00000        1.00000           0
+      27       -0.915745E-01   -1.00000        1.00000           0
+      28         3.48462        0.00000        60.0000           1
+      29       -0.492572E-03   -2.00000        2.00000           1
+      30        0.224968E-02   -1.00000        1.00000           1
+      31        0.397233E-01   -1.00000        1.00000           0
+      32        0.445016E-01   -1.00000        1.00000           0
+      33        0.907481E-04    0.00000        60.0000           1
+      34        0.968752E-01   -1.00000        1.00000           0
+      35       -0.310654E-01   -1.00000        1.00000           0
+      36         0.00000        0.00000        60.0000           0
+      37        0.286047E-01   -1.00000        1.00000           0
+      38       -0.964373E-01   -1.00000        1.00000           0
+      39         0.00000        0.00000        350.000           0
+      40       -0.867303E-01   -1.00000        1.00000           0
+      41       -0.707844E-01   -1.00000        1.00000           0
+      42         0.00000        0.00000        350.000           0
+ SETUP: Z=    0.00,  emittances=   0.000567    0.000580   cm * rad (see Becker on "why pi?")
+ ***WARNING: x-y coupling so emittances may have limited meaning
+  coupling parameter =    7.00000003E-02
+         HEBT2:Q2: abx,aby=     0.000000    0.000000
+ dipole ent. edge: abx,aby=     0.022836    0.003489
+ dipole exit edge: abx,aby=     0.047246    0.005573
+         HEBT2:Q3: abx,aby=     0.006444    0.002193
+         HEBT2:Q4: abx,aby=     0.000050    0.000040
+         HEBT2:Q5: abx,aby=     0.004403    0.017771
+         HEBT2:Q6: abx,aby=     0.000979    0.001829
+         HEBT2:Q7: abx,aby=     0.000007    0.000012
+         HEBT2:Q8: abx,aby=     0.000003    0.000004
+ Dragon-Gas-Slit-: slit transmission and emittance ratios:          Tx,Ex,Ty,Ey =     0.998492    0.991714    1.000000    1.000000
+           DRA:Q1: abx,aby=     0.000000    0.000000
+           DRA:Q2: abx,aby=     0.000000    0.000000
+
+ ---------- Element: DRA:, Z=   938.31    ----------Transfer Matrix----------
+
+      x           theta           y           phi             l           delta
+
+ -2.969617      236.5158     0.1156889E-09-0.1982759E-07 0.2156776E-10  220.6043    
+-0.5730954E-02 0.1197010     0.4254461E-12-0.7885519E-10-0.1667524E-13 0.2917742    
+ 0.3493437E-09-0.4946125E-07 -1.302360     -323.4328     0.4608547E-11-0.3140977E-07
+ 0.1395596E-11-0.1995567E-09-0.3493217E-02 -1.635356     0.1848612E-13-0.1260753E-09
+-0.3978222     -42.60262    -0.1843007E-11 0.4370281E-09  1.000000      936.3640    
+ 0.1284345E-12-0.1131133E-10-0.7976950E-14 0.1557593E-11 0.1123334E-12  1.000000    
+  
+
+ Output Vectors are on unit 16; only FIT elements listed here.
+                                                                            Beam matrix element  * 1  0.0000      10.000      1  FIT
+                                                                                 z=     400.07       0.18028E-01 Value
+                                                                            Beam matrix element  * 3  0.0000      10.000      1  FIT
+                                                                                 z=     400.07       0.55743E-02 Value
+                                                                            Beam matrix element  * 1  0.0000      10.000      1  FIT
+                                                                                 z=     640.67      -0.19592E-01 Value
+                                                                            Beam matrix element  * 3  0.0000      10.000      1  FIT
+                                                                                 z=     640.67      -0.24640E-01 Value
+                                                                                 waist: alpha=0  1 0  0.0000      10.000      1  FIT
+                                                                                 z=     715.12       0.17112     Value
+                                                                                 waist: alpha=0  3 0  0.0000      10.000      1  FIT
+                                                                                 z=     715.12       0.13244E-01 Value
+                                                                            Beam matrix element  * 1  0.0000      10.000      1  FIT
+                                                                                 z=     720.55      -0.45342E-02 Value
+                                                                            Beam matrix element  * 3  0.0000      10.000      1  FIT
+                                                                                 z=     720.55       0.11436E-01 Value
+ Total TOF=    9.91975639E-07  sec.
+ no. of calls to sc=     3566215
+
+ Runge-Kutta engine= 0, Final step=      1.280cm, EPS= .100E-03
+
+ Symplectic.Error/EPS; Avg.=    0.019, St.Dev.=    0.011, Max. =    0.032
+
+ No. of iterations =   58
+   20 Optimized sqrt(CHI)=  0.1763498E+01
+ chi(i)=  0.0000000     0.23100801E-01 0.47573857E-01 0.68067224E-02 0.64090003E-04 0.18027538     0.55743456E-01 0.18308176E-01
+ chi(i)= 0.20747408E-02 0.14061862E-04 0.52265436E-05 0.19591865     0.24639823      1.7111542     0.13243641     0.15086582E-02
+ chi(i)= 0.45341734E-01 0.11435546      0.0000000      0.0000000    
+   20 Final run sqrt(CHI)=  0.1760287E+01
+  Fixed Parameter:  0.634234E-01
+  Fixed Parameter:  0.429026E-01
+  Fixed Parameter: -0.358989E-03
+  Fixed Parameter: -0.534601E-02
+  Fixed Parameter: -0.958708E-01
+  Fixed Parameter:  0.403992E-02
+  Fixed Parameter:   0.00000    
+  Fixed Parameter:  0.975898E-01
+  Fixed Parameter:  0.842155E-01
+  Fixed Parameter: -0.126935E-01
+  Fixed Parameter:  0.159158E-01
+  Fixed Parameter:   0.00000    
+ Varied Parameter: -0.168677E-01
+ Varied Parameter:  0.946234E-02
+  Fixed Parameter: -0.301765E-01
+  Fixed Parameter:  0.902989E-01
+  Fixed Parameter:   3.80000    
+  Fixed Parameter: -0.935874E-01
+  Fixed Parameter: -0.837476E-01
+  Fixed Parameter:   0.00000    
+ Varied Parameter:  0.965737E-02
+ Varied Parameter: -0.507958E-02
+  Fixed Parameter:  0.598243E-02
+  Fixed Parameter: -0.834708E-01
+ Varied Parameter:   5.91140    
+  Fixed Parameter:  0.534898E-01
+  Fixed Parameter: -0.915745E-01
+ Varied Parameter:   3.48462    
+ Varied Parameter: -0.492572E-03
+ Varied Parameter:  0.224968E-02
+  Fixed Parameter:  0.397233E-01
+  Fixed Parameter:  0.445016E-01
+ Varied Parameter:  0.907481E-04
+  Fixed Parameter:  0.968752E-01
+  Fixed Parameter: -0.310654E-01
+  Fixed Parameter:   0.00000    
+  Fixed Parameter:  0.286047E-01
+  Fixed Parameter: -0.964373E-01
+  Fixed Parameter:   0.00000    
+  Fixed Parameter: -0.867303E-01
+  Fixed Parameter: -0.707844E-01
+  Fixed Parameter:   0.00000    
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG IEEE_UNDERFLOW_FLAG IEEE_DENORMAL

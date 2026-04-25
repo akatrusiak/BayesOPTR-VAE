@@ -1,0 +1,155 @@
+profile: false
+timing: false
+measurements_sigma: true
+bayesopt_type: standard
+multi_objective: false
+scale: false
+bound: false
+bound_safety_factor: 1
+error_on_train_y: false
+switch_time: 5
+model:
+  iterations: 200
+  initial_sample_points: 20
+  candidate_points: 1
+  scan_vs_fit: false
+  scan_vs_fit_points: 15
+  zero_beta_iterations: 0
+  beta: 5
+  acquisition_function: EI
+  delay_threshold: 0.2
+  num_restarts: 20
+  raw_samples: 100
+  random_starting_means: false
+  deterministic_sampling: false
+  sampling_threshold: 5
+  make_plots: true
+  optimizer: SGD
+  kernel:
+    type: Matern
+    nu: 2.5
+    lengthscale_prior:
+      type: Gamma
+      concentration: 3.01
+      rate: 6.01
+    outputscale_prior:
+      type: Gamma
+      concentration: 2.0
+      rate: 0.15
+  penalisation_param:
+    gaussian:
+      sigma: 0.25
+    quadratic:
+      penalty_factor: 4
+beam:
+  jaya_url: https://vpn.beta.hla.triumf.ca/jaya/
+  initial_transmission: 351.62353515625
+  beam_energy: 5568
+  beam_mass: 12
+  beam_chargestate: 3
+  steering_elements:
+    HEBT2:XCB2:CUR:
+      type: steerer
+      lower_bound: -3.0
+      upper_bound: 3.0
+      starting_mean: 0.0
+      starting_var: 0.6
+      max_incremental_change: 6.0
+      set_zero_crossing: true
+    HEBT2:YCB2:CUR:
+      type: steerer
+      lower_bound: -3.0
+      upper_bound: 3
+      starting_mean: 0.0
+      starting_var: 0.6
+      max_incremental_change: 6.0
+      set_zero_crossing: true
+    HEBT2:XCB4:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    HEBT2:YCB4:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    HEBT2:Q5:CUR:
+      type: quad
+      lower_bound: 22.508
+      upper_bound: 30.452
+      starting_mean: 30.0
+      starting_var: 6.0
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    HEBT2:Q6:CUR:
+      type: quad
+      lower_bound: 16.235
+      upper_bound: 21.965
+      starting_mean: 30.0
+      starting_var: 6.0
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    HEBT2:XCB6:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    HEBT2:YCB6:CUR:
+      type: steerer
+      lower_bound: -100.0
+      upper_bound: 100.0
+      starting_mean: 0.0
+      starting_var: 20.0
+      max_incremental_change: 200.0
+      set_zero_crossing: true
+    HEBT2:Q7:CUR:
+      type: quad
+      lower_bound: 12.852
+      upper_bound: 17.388
+      starting_mean: 30.0
+      starting_var: 6.0
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    HEBT2:Q8:CUR:
+      type: quad
+      lower_bound: 1.615
+      upper_bound: 2.185
+      starting_mean: 30.0
+      starting_var: 6.0
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    DRA:Q1:CUR:
+      type: quad
+      lower_bound: 185.478
+      upper_bound: 205.002
+      starting_mean: 30.0
+      starting_var: 6.0
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    DRA:Q2:CUR:
+      type: quad
+      lower_bound: 157.9945
+      upper_bound: 174.6255
+      starting_mean: 30.0
+      starting_var: 6.0
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+  measurement_device:
+    type: fc
+    loc: 750.6730100000001
+    pv: DRA:FC1:SCALECUR
+    measure_points: 20
+    trim_ratio: 0.2
+    ptime: 0.01
+    scale_factor: 1000000000000
+  common_elements: {}

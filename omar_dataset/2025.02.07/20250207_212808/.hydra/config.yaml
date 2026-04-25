@@ -1,0 +1,139 @@
+profile: false
+timing: false
+measurements_sigma: true
+bayesopt_type: standard
+multi_objective: false
+scale: false
+bound: true
+bound_safety_factor: 1
+error_on_train_y: false
+switch_time: 5
+model:
+  iterations: 120
+  initial_sample_points: 20
+  candidate_points: 1
+  fit_vs_scan: true
+  fit_vs_scan_points: 15
+  zero_beta_iterations: 0
+  beta: 10
+  acquisition_function: EI
+  delay_threshold: 0.2
+  num_restarts: 20
+  raw_samples: 100
+  random_starting_means: false
+  deterministic_sampling: false
+  sampling_threshold: 5
+  make_plots: true
+  optimizer: SGD
+  kernel:
+    type: Matern
+    nu: 2.5
+    lengthscale_prior:
+      type: Gamma
+      concentration: 3.01
+      rate: 6.01
+    outputscale_prior:
+      type: Gamma
+      concentration: 2.0
+      rate: 0.15
+  penalisation_param:
+    gaussian:
+      sigma: 0.25
+    quadratic:
+      penalty_factor: 4
+beam:
+  jaya_url: https://vpn.beta.hla.triumf.ca/jaya/
+  initial_transmission: 10000000.0
+  beam_energy: 40.7
+  beam_mass: 40
+  beam_chargestate: 1
+  steering_elements:
+    IOS:XCB1:VOL:
+      type: steerer
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonis: IOS:CCB1:VOL
+    IOS:YCB1:VOL:
+      type: steerer
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonis: IOS:CCB1:VOL
+    IOS:YCB1A:VOL:
+      type: steerer
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonis: IOS:CCB1:VOL
+    IOS:YCB3:VOL:
+      type: steerer
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonis: IOS:CCB1:VOL
+    IOS:YCB4:VOL:
+      type: steerer
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonis: IOS:CCB4:VOL
+    IOS:YCB6:VOL:
+      type: steerer
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonis: IOS:CCB4:VOL
+  measurement_device:
+    type: fc
+    loc: 304.174
+    pv: IOS:FC6:SCALECUR
+    measure_points: 20
+    trim_ratio: 0.2
+    ptime: 0.01
+    scale_factor: 1000000000000
+  common_elements:
+    IOS:CCB1:VOL:
+      type: steerer
+      loc: 0.0
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonto:
+      - IOS:XCB1:VOL
+      - IOS:YCB1:VOL
+      - IOS:YCB1A:VOL
+      - IOS:YCB3:VOL
+    IOS:CCB4:VOL:
+      type: steerer
+      loc: 226.53300000000002
+      lower_bound: 0.0
+      upper_bound: 1000.0
+      starting_mean: 500.0
+      starting_var: 100.0
+      max_incremental_change: 1000.0
+      set_zero_crossing: false
+      commonto:
+      - IOS:YCB4:VOL
+      - IOS:YCB6:VOL

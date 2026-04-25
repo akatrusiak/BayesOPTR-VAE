@@ -1,0 +1,91 @@
+profile: false
+timing: false
+measurements_sigma: true
+bayesopt_type: standard
+multi_objective: false
+scale: false
+bound: false
+bound_safety_factor: 1
+error_on_train_y: false
+switch_time: 5
+model:
+  iterations: 200
+  initial_sample_points: 20
+  candidate_points: 1
+  scan_vs_fit: false
+  scan_vs_fit_points: 15
+  zero_beta_iterations: 0
+  beta: 3
+  acquisition_function: UCB
+  delay_threshold: 0.2
+  num_restarts: 20
+  raw_samples: 100
+  random_starting_means: false
+  deterministic_sampling: false
+  sampling_threshold: 5
+  make_plots: true
+  optimizer: SGD
+  kernel:
+    type: Matern
+    nu: 2.5
+    lengthscale_prior:
+      type: Gamma
+      concentration: 3.01
+      rate: 6.01
+    outputscale_prior:
+      type: Gamma
+      concentration: 2.0
+      rate: 0.15
+  penalisation_param:
+    gaussian:
+      sigma: 0.25
+    quadratic:
+      penalty_factor: 4
+beam:
+  jaya_url: https://vpn.beta.hla.triumf.ca/jaya/
+  initial_transmission: 1400
+  beam_energy: 33782
+  beam_mass: 133
+  beam_chargestate: 21
+  steering_elements:
+    HEBT2:Q7:CUR:
+      type: quad
+      lower_bound: 13.005
+      upper_bound: 17.595
+      starting_mean: 15.3
+      starting_var: 1
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    HEBT2:Q8:CUR:
+      type: quad
+      lower_bound: 0
+      upper_bound: 5
+      starting_mean: 2.5
+      starting_var: 1
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    DRA:Q1:CUR:
+      type: quad
+      lower_bound: 228.27
+      upper_bound: 230.27
+      starting_mean: 229.27
+      starting_var: 0.25
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+    DRA:Q2:CUR:
+      type: quad
+      lower_bound: 194.06
+      upper_bound: 196.06
+      starting_mean: 195.06
+      starting_var: 0.25
+      max_incremental_change: 60.0
+      set_zero_crossing: false
+  measurement_device:
+    type: fc
+    loc: 750.6730100000001
+    pv: DRA:FC1:SCALECUR
+    measure_points: 20
+    trim_ratio: 0.2
+    ptime: 0.01
+    scale_factor: 1000000000000
+  common_elements: {}

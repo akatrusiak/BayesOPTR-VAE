@@ -1,0 +1,215 @@
+COMMAND:
+/home/katrus/venv/default/bin/python3 /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/main.py hydra.run.dir=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/bo_runs/run_482__surrogate_mean__seed0 misalignments=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/misalignments_yamls/run_482.yaml sim.random_seed=0 iterations=80 initial_points=20 mean_function.surrogate_path=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/vae_project/vae/runs/surrogate_n720/sgt_wide/best.pt mean_function.delta_yaml=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment_update/misalignments_yamls/run_482.yaml 'mean_function.delta_names=[MISALIGNX1,MISALIGNY1,MISALIGNX2,MISALIGNY2,HEBT2:Q2:MISALIGNX,HEBT2:Q2:MISALIGNY,HEBT2:Q3:MISALIGNX,HEBT2:Q3:MISALIGNY,HEBT2:Q4:MISALIGNX,HEBT2:Q4:MISALIGNY,HEBT2:Q5:MISALIGNX,HEBT2:Q5:MISALIGNY,HEBT2:Q6:MISALIGNX,HEBT2:Q6:MISALIGNY,HEBT2:Q7:MISALIGNX,HEBT2:Q7:MISALIGNY,HEBT2:Q8:MISALIGNX,HEBT2:Q8:MISALIGNY,DRA:Q1:MISALIGNX,DRA:Q1:MISALIGNY,DRA:Q2:MISALIGNX,DRA:Q2:MISALIGNY,HEBT2:MB1:MISALIGNX,HEBT2:MB1:MISALIGNY,HEBT2:MB1:MISALIGNZ,HEBT2:MB1:MBX,HEBT2:MB1:MBY]' 'mean_function.surrogate_input_names=[HEBT2:XCB2,HEBT2:YCB2,HEBT2:XCB4,HEBT2:YCB4,HEBT2:Q5:CUR,HEBT2:Q6:CUR,HEBT2:XCB6,HEBT2:YCB6,HEBT2:Q7:CUR]' mean_function.device=cpu
+
+accpy in DEVELOPMENT MODE, using locally defined ACC repo at:
+/home/katrus/repos/acc
+
+End of Beamline init...
+Please interface only via public methods 
+- clear_misalignments
+- measure_fc
+- measure_size
+- read_beamline_state
+- render
+- set_misalignments
+- update_beamline_state
+SimRunAdapter: using initial_transmission=1.0
+Simulation mode: tuning 9 elements
+  HEBT2:XCB2: [-0.02, 0.02]
+  HEBT2:YCB2: [-0.02, 0.02]
+  HEBT2:XCB4: [-0.02, 0.02]
+  HEBT2:YCB4: [-0.02, 0.02]
+  HEBT2:XCB6: [-0.02, 0.02]
+  HEBT2:YCB6: [-0.02, 0.02]
+  HEBT2:Q5:CUR: [0.0, 60.0]
+  HEBT2:Q6:CUR: [0.0, 60.0]
+  HEBT2:Q7:CUR: [0.0, 60.0]
+Collecting 20 initial training points
+Done Training
+Maximum sampling current: 0.20796966989199944 pA
+Max current from sampling: 0.20796966989199944 pA
+  0%|          | 0/80 [00:00<?, ?it/s]current: 0.00%, max: 20.80%, iter: 1:   0%|          | 0/80 [00:05<?, ?it/s]current: 0.00%, max: 20.80%, iter: 1:   1%|▏         | 1/80 [00:05<07:38,  5.80s/it]current: 0.00%, max: 20.80%, iter: 2:   1%|▏         | 1/80 [00:08<07:38,  5.80s/it]current: 0.00%, max: 20.80%, iter: 2:   2%|▎         | 2/80 [00:08<05:07,  3.94s/it]current: 0.00%, max: 20.80%, iter: 3:   2%|▎         | 2/80 [00:10<05:07,  3.94s/it]current: 0.00%, max: 20.80%, iter: 3:   4%|▍         | 3/80 [00:10<04:06,  3.20s/it]current: 0.00%, max: 20.80%, iter: 4:   4%|▍         | 3/80 [00:12<04:06,  3.20s/it]current: 0.00%, max: 20.80%, iter: 4:   5%|▌         | 4/80 [00:12<03:33,  2.81s/it]current: 0.00%, max: 20.80%, iter: 5:   5%|▌         | 4/80 [00:15<03:33,  2.81s/it]current: 0.00%, max: 20.80%, iter: 5:   6%|▋         | 5/80 [00:15<03:24,  2.73s/it]current: 0.00%, max: 20.80%, iter: 6:   6%|▋         | 5/80 [00:18<03:24,  2.73s/it]current: 0.00%, max: 20.80%, iter: 6:   8%|▊         | 6/80 [00:18<03:19,  2.70s/it]current: 0.00%, max: 20.80%, iter: 7:   8%|▊         | 6/80 [00:19<03:19,  2.70s/it]current: 0.00%, max: 20.80%, iter: 7:   9%|▉         | 7/80 [00:19<02:51,  2.34s/it]current: 0.00%, max: 20.80%, iter: 8:   9%|▉         | 7/80 [00:22<02:51,  2.34s/it]current: 0.00%, max: 20.80%, iter: 8:  10%|█         | 8/80 [00:22<02:53,  2.41s/it]current: 0.00%, max: 20.80%, iter: 9:  10%|█         | 8/80 [00:24<02:53,  2.41s/it]current: 0.00%, max: 20.80%, iter: 9:  11%|█▏        | 9/80 [00:24<02:41,  2.27s/it]current: 0.00%, max: 20.80%, iter: 10:  11%|█▏        | 9/80 [00:26<02:41,  2.27s/it]current: 0.00%, max: 20.80%, iter: 10:  12%|█▎        | 10/80 [00:26<02:35,  2.22s/it]current: 0.00%, max: 20.80%, iter: 11:  12%|█▎        | 10/80 [00:29<02:35,  2.22s/it]current: 0.00%, max: 20.80%, iter: 11:  14%|█▍        | 11/80 [00:29<02:48,  2.44s/it]current: 0.00%, max: 20.80%, iter: 12:  14%|█▍        | 11/80 [00:32<02:48,  2.44s/it]current: 0.00%, max: 20.80%, iter: 12:  15%|█▌        | 12/80 [00:32<02:55,  2.58s/it]current: 0.00%, max: 20.80%, iter: 13:  15%|█▌        | 12/80 [00:35<02:55,  2.58s/it]current: 0.00%, max: 20.80%, iter: 13:  16%|█▋        | 13/80 [00:35<03:02,  2.72s/it]current: 0.00%, max: 20.80%, iter: 14:  16%|█▋        | 13/80 [00:38<03:02,  2.72s/it]current: 0.00%, max: 20.80%, iter: 14:  18%|█▊        | 14/80 [00:38<03:04,  2.79s/it]current: 0.00%, max: 20.80%, iter: 15:  18%|█▊        | 14/80 [00:40<03:04,  2.79s/it]current: 0.00%, max: 20.80%, iter: 15:  19%|█▉        | 15/80 [00:40<02:51,  2.64s/it]current: 0.00%, max: 20.80%, iter: 16:  19%|█▉        | 15/80 [00:42<02:51,  2.64s/it]current: 0.00%, max: 20.80%, iter: 16:  20%|██        | 16/80 [00:42<02:40,  2.50s/it]current: 0.00%, max: 20.80%, iter: 17:  20%|██        | 16/80 [00:44<02:40,  2.50s/it]current: 0.00%, max: 20.80%, iter: 17:  21%|██▏       | 17/80 [00:44<02:25,  2.31s/it]current: 0.00%, max: 20.80%, iter: 18:  21%|██▏       | 17/80 [00:46<02:25,  2.31s/it]current: 0.00%, max: 20.80%, iter: 18:  22%|██▎       | 18/80 [00:46<02:19,  2.25s/it]current: 0.00%, max: 20.80%, iter: 19:  22%|██▎       | 18/80 [00:49<02:19,  2.25s/it]current: 0.00%, max: 20.80%, iter: 19:  24%|██▍       | 19/80 [00:49<02:19,  2.28s/it]current: 0.00%, max: 20.80%, iter: 20:  24%|██▍       | 19/80 [00:51<02:19,  2.28s/it]current: 0.00%, max: 20.80%, iter: 20:  25%|██▌       | 20/80 [00:51<02:23,  2.39s/it]current: 0.00%, max: 20.80%, iter: 21:  25%|██▌       | 20/80 [00:53<02:23,  2.39s/it]current: 0.00%, max: 20.80%, iter: 21:  26%|██▋       | 21/80 [00:53<02:14,  2.28s/it]current: 0.00%, max: 20.80%, iter: 22:  26%|██▋       | 21/80 [00:57<02:14,  2.28s/it]current: 0.00%, max: 20.80%, iter: 22:  28%|██▊       | 22/80 [00:57<02:43,  2.83s/it]current: 0.00%, max: 20.80%, iter: 23:  28%|██▊       | 22/80 [01:01<02:43,  2.83s/it]current: 0.00%, max: 20.80%, iter: 23:  29%|██▉       | 23/80 [01:01<02:52,  3.02s/it]current: 0.00%, max: 20.80%, iter: 24:  29%|██▉       | 23/80 [01:03<02:52,  3.02s/it]current: 0.00%, max: 20.80%, iter: 24:  30%|███       | 24/80 [01:03<02:35,  2.77s/it]current: 0.00%, max: 20.80%, iter: 25:  30%|███       | 24/80 [01:09<02:35,  2.77s/it]current: 0.00%, max: 20.80%, iter: 25:  31%|███▏      | 25/80 [01:09<03:27,  3.77s/it]current: 0.00%, max: 20.80%, iter: 26:  31%|███▏      | 25/80 [01:11<03:27,  3.77s/it]current: 0.00%, max: 20.80%, iter: 26:  32%|███▎      | 26/80 [01:11<03:00,  3.34s/it]current: 0.00%, max: 20.80%, iter: 27:  32%|███▎      | 26/80 [01:15<03:00,  3.34s/it]current: 0.00%, max: 20.80%, iter: 27:  34%|███▍      | 27/80 [01:15<03:02,  3.44s/it]current: 0.00%, max: 20.80%, iter: 28:  34%|███▍      | 27/80 [01:18<03:02,  3.44s/it]current: 0.00%, max: 20.80%, iter: 28:  35%|███▌      | 28/80 [01:18<02:44,  3.16s/it]current: 0.00%, max: 20.80%, iter: 29:  35%|███▌      | 28/80 [01:20<02:44,  3.16s/it]current: 0.00%, max: 20.80%, iter: 29:  36%|███▋      | 29/80 [01:20<02:25,  2.85s/it]current: 0.00%, max: 20.80%, iter: 30:  36%|███▋      | 29/80 [01:22<02:25,  2.85s/it]current: 0.00%, max: 20.80%, iter: 30:  38%|███▊      | 30/80 [01:22<02:07,  2.54s/it]current: 0.00%, max: 20.80%, iter: 31:  38%|███▊      | 30/80 [01:24<02:07,  2.54s/it]current: 0.00%, max: 20.80%, iter: 31:  39%|███▉      | 31/80 [01:24<01:55,  2.36s/it]current: 0.00%, max: 20.80%, iter: 32:  39%|███▉      | 31/80 [01:26<01:55,  2.36s/it]current: 0.00%, max: 20.80%, iter: 32:  40%|████      | 32/80 [01:26<01:54,  2.39s/it]current: 0.00%, max: 20.80%, iter: 33:  40%|████      | 32/80 [01:29<01:54,  2.39s/it]current: 0.00%, max: 20.80%, iter: 33:  41%|████▏     | 33/80 [01:29<01:57,  2.50s/it]current: 0.00%, max: 20.80%, iter: 34:  41%|████▏     | 33/80 [01:33<01:57,  2.50s/it]current: 0.00%, max: 20.80%, iter: 34:  42%|████▎     | 34/80 [01:33<02:16,  2.97s/it]current: 0.00%, max: 20.80%, iter: 35:  42%|████▎     | 34/80 [01:37<02:16,  2.97s/it]current: 0.00%, max: 20.80%, iter: 35:  44%|████▍     | 35/80 [01:37<02:25,  3.24s/it]current: 0.00%, max: 20.80%, iter: 36:  44%|████▍     | 35/80 [01:39<02:25,  3.24s/it]current: 0.00%, max: 20.80%, iter: 36:  45%|████▌     | 36/80 [01:39<02:16,  3.10s/it]current: 0.00%, max: 20.80%, iter: 37:  45%|████▌     | 36/80 [01:44<02:16,  3.10s/it]current: 0.00%, max: 20.80%, iter: 37:  46%|████▋     | 37/80 [01:44<02:31,  3.52s/it]current: 0.00%, max: 20.80%, iter: 38:  46%|████▋     | 37/80 [01:49<02:31,  3.52s/it]current: 0.00%, max: 20.80%, iter: 38:  48%|████▊     | 38/80 [01:49<02:42,  3.87s/it]current: 0.00%, max: 20.80%, iter: 39:  48%|████▊     | 38/80 [01:51<02:42,  3.87s/it]current: 0.00%, max: 20.80%, iter: 39:  49%|████▉     | 39/80 [01:51<02:17,  3.36s/it]current: 0.00%, max: 20.80%, iter: 40:  49%|████▉     | 39/80 [01:53<02:17,  3.36s/it]current: 0.00%, max: 20.80%, iter: 40:  50%|█████     | 40/80 [01:53<01:58,  2.95s/it]current: 0.00%, max: 20.80%, iter: 41:  50%|█████     | 40/80 [01:56<01:58,  2.95s/it]current: 0.00%, max: 20.80%, iter: 41:  51%|█████▏    | 41/80 [01:56<01:57,  3.01s/it]current: 0.00%, max: 20.80%, iter: 42:  51%|█████▏    | 41/80 [02:00<01:57,  3.01s/it]current: 0.00%, max: 20.80%, iter: 42:  52%|█████▎    | 42/80 [02:00<02:01,  3.19s/it]current: 0.00%, max: 20.80%, iter: 43:  52%|█████▎    | 42/80 [02:05<02:01,  3.19s/it]current: 0.00%, max: 20.80%, iter: 43:  54%|█████▍    | 43/80 [02:05<02:26,  3.96s/it]current: 0.00%, max: 20.80%, iter: 44:  54%|█████▍    | 43/80 [02:08<02:26,  3.96s/it]current: 0.00%, max: 20.80%, iter: 44:  55%|█████▌    | 44/80 [02:08<02:14,  3.73s/it]current: 0.00%, max: 20.80%, iter: 45:  55%|█████▌    | 44/80 [02:12<02:14,  3.73s/it]current: 0.00%, max: 20.80%, iter: 45:  56%|█████▋    | 45/80 [02:12<02:04,  3.57s/it]current: 0.00%, max: 20.80%, iter: 46:  56%|█████▋    | 45/80 [02:17<02:04,  3.57s/it]current: 0.00%, max: 20.80%, iter: 46:  57%|█████▊    | 46/80 [02:17<02:14,  3.95s/it]current: 0.00%, max: 20.80%, iter: 47:  57%|█████▊    | 46/80 [02:21<02:14,  3.95s/it]current: 0.00%, max: 20.80%, iter: 47:  59%|█████▉    | 47/80 [02:21<02:16,  4.13s/it]current: 0.00%, max: 20.80%, iter: 48:  59%|█████▉    | 47/80 [02:24<02:16,  4.13s/it]current: 0.00%, max: 20.80%, iter: 48:  60%|██████    | 48/80 [02:24<02:04,  3.89s/it]current: 0.00%, max: 20.80%, iter: 49:  60%|██████    | 48/80 [02:30<02:04,  3.89s/it]current: 0.00%, max: 20.80%, iter: 49:  61%|██████▏   | 49/80 [02:30<02:17,  4.45s/it]current: 0.00%, max: 20.80%, iter: 50:  61%|██████▏   | 49/80 [02:34<02:17,  4.45s/it]current: 0.00%, max: 20.80%, iter: 50:  62%|██████▎   | 50/80 [02:34<02:11,  4.38s/it]current: 0.00%, max: 20.80%, iter: 51:  62%|██████▎   | 50/80 [02:39<02:11,  4.38s/it]current: 0.00%, max: 20.80%, iter: 51:  64%|██████▍   | 51/80 [02:39<02:10,  4.49s/it]current: 0.00%, max: 20.80%, iter: 52:  64%|██████▍   | 51/80 [02:44<02:10,  4.49s/it]current: 0.00%, max: 20.80%, iter: 52:  65%|██████▌   | 52/80 [02:44<02:11,  4.70s/it]current: 0.00%, max: 20.80%, iter: 53:  65%|██████▌   | 52/80 [02:48<02:11,  4.70s/it]current: 0.00%, max: 20.80%, iter: 53:  66%|██████▋   | 53/80 [02:48<01:55,  4.29s/it]current: 0.00%, max: 20.80%, iter: 54:  66%|██████▋   | 53/80 [02:52<01:55,  4.29s/it]current: 0.00%, max: 20.80%, iter: 54:  68%|██████▊   | 54/80 [02:52<01:50,  4.26s/it]current: 0.00%, max: 20.80%, iter: 55:  68%|██████▊   | 54/80 [02:55<01:50,  4.26s/it]current: 0.00%, max: 20.80%, iter: 55:  69%|██████▉   | 55/80 [02:55<01:40,  4.03s/it]current: 0.00%, max: 20.80%, iter: 56:  69%|██████▉   | 55/80 [02:58<01:40,  4.03s/it]current: 0.00%, max: 20.80%, iter: 56:  70%|███████   | 56/80 [02:58<01:23,  3.50s/it]current: 0.00%, max: 20.80%, iter: 57:  70%|███████   | 56/80 [03:01<01:23,  3.50s/it]current: 0.00%, max: 20.80%, iter: 57:  71%|███████▏  | 57/80 [03:01<01:22,  3.57s/it]current: 0.00%, max: 20.80%, iter: 58:  71%|███████▏  | 57/80 [03:05<01:22,  3.57s/it]current: 0.00%, max: 20.80%, iter: 58:  72%|███████▎  | 58/80 [03:05<01:20,  3.67s/it]current: 0.00%, max: 20.80%, iter: 59:  72%|███████▎  | 58/80 [03:10<01:20,  3.67s/it]current: 0.00%, max: 20.80%, iter: 59:  74%|███████▍  | 59/80 [03:10<01:26,  4.12s/it]GP y_mean: 0.010398483710701976 GP y_std: 0.046503431862805075
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.009903317819716168 GP y_std: 0.045382702549750596
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.00945316700972907 GP y_std: 0.04433928255733497
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.009042159748436501 GP y_std: 0.04336467381820954
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.008665403092251648 GP y_std: 0.04245163106251341
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.008318786968561582 GP y_std: 0.041593933942382894
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.007998833623616905 GP y_std: 0.04078620785127802
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.007702580526445908 GP y_std: 0.04002378159981641
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.007427488364787126 GP y_std: 0.03930257331106482
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.007171368076346191 GP y_std: 0.03861899815250102
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.006932322473801318 GP y_std: 0.03796989313170694
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.006708699168194824 GP y_std: 0.037352455347485866
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.006499052319188735 GP y_std: 0.03676419094079383
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.00630211133981938 GP y_std: 0.036202872621167954
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.006116755123942339 GP y_std: 0.035666504116571206
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.005941990691829701 GP y_std: 0.035153290251254674
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.005776935394834431 GP y_std: 0.03466161162808544
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.005620802005784852 GP y_std: 0.03419000310073698
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.005472886163527356 GP y_std: 0.03373713538302633
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.005332555749077937 GP y_std: 0.03330179926904666
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.005199241855350988 GP y_std: 0.0328828920370807
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.005072431078391208 GP y_std: 0.032479405688890406
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004951658909858084 GP y_std: 0.032090416738579944
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004836504051489291 GP y_std: 0.03171507731538068
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004726583504864535 GP y_std: 0.03135260738511236
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004621548315867545 GP y_std: 0.031002287927803823
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004521079874218251 GP y_std: 0.030663454935603508
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004424886685405097 GP y_std: 0.030335494116911353
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004332701546125824 GP y_std: 0.030017836210582835
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004244279065592643 GP y_std: 0.02970995282885099
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004159393484280791 GP y_std: 0.02941135275987806
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.004077836749294893 GP y_std: 0.029121578671060508
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0039994168118084525 GP y_std: 0.028840204162744923
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003923956117246029 GP y_std: 0.028566831129170862
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003851290263222954 GP y_std: 0.02830108738948364
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003781266803891628 GP y_std: 0.02804262455675009
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003713744182393563 GP y_std: 0.02779111611722532
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003648590775684904 GP y_std: 0.02754625569578627
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0035856840381730953 GP y_std: 0.027307755486576147
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003524909732441348 GP y_std: 0.027075344830579443
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003466161236900659 GP y_std: 0.02684876892414176
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0034093389215416317 GP y_std: 0.02662778764442295
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003354349584097412 GP y_std: 0.026412174479473274
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0033011059399053896 GP y_std: 0.026201715552094832
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0032495261595943676 GP y_std: 0.025996208727924457
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003199533449446762 GP y_std: 0.025795462799283155
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.00315105566990969 GP y_std: 0.025599296737301148
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0031040249882692468 GP y_std: 0.02540753900566947
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0030583775619711694 GP y_std: 0.025220026930105215
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.003014053249478834 GP y_std: 0.025036606118262514
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0029709953459148503 GP y_std: 0.024857129925388043
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0029291503410428105 GP y_std: 0.024681458961517945
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0028884676974172156 GP y_std: 0.02450946063645272
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002848899646767665 GP y_std: 0.024341008739134407
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002810401002892426 GP y_std: 0.02417598304839395
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002772928989520527 GP y_std: 0.02401426897234056
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002736443081763678 GP y_std: 0.023855757213935472
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002700904859922591 GP y_std: 0.023700343460532052
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0026662778745389685 GP y_std: 0.023547928095378864
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0026325275216967027 GP y_std: 0.023398415929272585
+surrogate y_mean: 0.07453591622308163 surrogate y_std: current: 0.00%, max: 20.80%, iter: 60:  74%|███████▍  | 59/80 [03:16<01:26,  4.12s/it]current: 0.00%, max: 20.80%, iter: 60:  75%|███████▌  | 60/80 [03:16<01:29,  4.47s/it]current: 0.00%, max: 20.80%, iter: 61:  75%|███████▌  | 60/80 [03:19<01:29,  4.47s/it]current: 0.00%, max: 20.80%, iter: 61:  76%|███████▋  | 61/80 [03:19<01:17,  4.06s/it]current: 0.00%, max: 20.80%, iter: 62:  76%|███████▋  | 61/80 [03:22<01:17,  4.06s/it]current: 0.00%, max: 20.80%, iter: 62:  78%|███████▊  | 62/80 [03:22<01:09,  3.85s/it]current: 0.00%, max: 20.80%, iter: 63:  78%|███████▊  | 62/80 [03:26<01:09,  3.85s/it]current: 0.00%, max: 20.80%, iter: 63:  79%|███████▉  | 63/80 [03:26<01:03,  3.72s/it]current: 0.00%, max: 20.80%, iter: 64:  79%|███████▉  | 63/80 [03:29<01:03,  3.72s/it]current: 0.00%, max: 20.80%, iter: 64:  80%|████████  | 64/80 [03:29<00:57,  3.57s/it]current: 0.00%, max: 20.80%, iter: 65:  80%|████████  | 64/80 [03:32<00:57,  3.57s/it]current: 0.00%, max: 20.80%, iter: 65:  81%|████████▏ | 65/80 [03:32<00:51,  3.46s/it]current: 0.00%, max: 20.80%, iter: 66:  81%|████████▏ | 65/80 [03:36<00:51,  3.46s/it]current: 0.00%, max: 20.80%, iter: 66:  82%|████████▎ | 66/80 [03:36<00:48,  3.50s/it]current: 0.00%, max: 20.80%, iter: 67:  82%|████████▎ | 66/80 [03:40<00:48,  3.50s/it]current: 0.00%, max: 20.80%, iter: 67:  84%|████████▍ | 67/80 [03:40<00:47,  3.66s/it]current: 0.00%, max: 20.80%, iter: 68:  84%|████████▍ | 67/80 [03:44<00:47,  3.66s/it]current: 0.00%, max: 20.80%, iter: 68:  85%|████████▌ | 68/80 [03:44<00:47,  3.94s/it]current: 0.00%, max: 20.80%, iter: 69:  85%|████████▌ | 68/80 [03:48<00:47,  3.94s/it]current: 0.00%, max: 20.80%, iter: 69:  86%|████████▋ | 69/80 [03:48<00:44,  4.04s/it]current: 0.00%, max: 20.80%, iter: 70:  86%|████████▋ | 69/80 [03:53<00:44,  4.04s/it]current: 0.00%, max: 20.80%, iter: 70:  88%|████████▊ | 70/80 [03:53<00:40,  4.09s/it]current: 0.00%, max: 20.80%, iter: 71:  88%|████████▊ | 70/80 [03:57<00:40,  4.09s/it]current: 0.00%, max: 20.80%, iter: 71:  89%|████████▉ | 71/80 [03:57<00:37,  4.12s/it]current: 0.00%, max: 20.80%, iter: 72:  89%|████████▉ | 71/80 [04:01<00:37,  4.12s/it]current: 0.00%, max: 20.80%, iter: 72:  90%|█████████ | 72/80 [04:01<00:32,  4.03s/it]current: 0.00%, max: 20.80%, iter: 73:  90%|█████████ | 72/80 [04:05<00:32,  4.03s/it]current: 0.00%, max: 20.80%, iter: 73:  91%|█████████▏| 73/80 [04:05<00:28,  4.01s/it]current: 0.00%, max: 20.80%, iter: 74:  91%|█████████▏| 73/80 [04:09<00:28,  4.01s/it]current: 0.00%, max: 20.80%, iter: 74:  92%|█████████▎| 74/80 [04:09<00:25,  4.19s/it]current: 0.00%, max: 20.80%, iter: 75:  92%|█████████▎| 74/80 [04:13<00:25,  4.19s/it]current: 0.00%, max: 20.80%, iter: 75:  94%|█████████▍| 75/80 [04:13<00:20,  4.11s/it]current: 0.00%, max: 20.80%, iter: 76:  94%|█████████▍| 75/80 [04:17<00:20,  4.11s/it]current: 0.00%, max: 20.80%, iter: 76:  95%|█████████▌| 76/80 [04:17<00:16,  4.00s/it]current: 0.00%, max: 20.80%, iter: 77:  95%|█████████▌| 76/80 [04:21<00:16,  4.00s/it]current: 0.00%, max: 20.80%, iter: 77:  96%|█████████▋| 77/80 [04:21<00:11,  3.98s/it]current: 0.00%, max: 20.80%, iter: 78:  96%|█████████▋| 77/80 [04:25<00:11,  3.98s/it]current: 0.00%, max: 20.80%, iter: 78:  98%|█████████▊| 78/80 [04:25<00:08,  4.05s/it]current: 0.00%, max: 20.80%, iter: 79:  98%|█████████▊| 78/80 [04:29<00:08,  4.05s/it]current: 0.00%, max: 20.80%, iter: 79:  99%|█████████▉| 79/80 [04:29<00:04,  4.14s/it]current: 0.00%, max: 20.80%, iter: 80:  99%|█████████▉| 79/80 [04:33<00:04,  4.14s/it]current: 0.00%, max: 20.80%, iter: 80: 100%|██████████| 80/80 [04:33<00:00,  3.95s/it]current: 0.00%, max: 20.80%, iter: 80: 100%|██████████| 80/80 [04:33<00:00,  3.42s/it]
+/home/katrus/venv/default/lib/python3.12/site-packages/matplotlib/transforms.py:2055: ComplexWarning: Casting complex values to real discards the imaginary part
+  self._mtx[0, 0] *= sx
+/home/katrus/venv/default/lib/python3.12/site-packages/matplotlib/transforms.py:2056: ComplexWarning: Casting complex values to real discards the imaginary part
+  self._mtx[0, 1] *= sx
+/home/katrus/venv/default/lib/python3.12/site-packages/matplotlib/transforms.py:2057: ComplexWarning: Casting complex values to real discards the imaginary part
+  self._mtx[0, 2] *= sx
+/home/katrus/venv/default/lib/python3.12/site-packages/matplotlib/transforms.py:2058: ComplexWarning: Casting complex values to real discards the imaginary part
+  self._mtx[1, 0] *= sy
+/home/katrus/venv/default/lib/python3.12/site-packages/matplotlib/transforms.py:2059: ComplexWarning: Casting complex values to real discards the imaginary part
+  self._mtx[1, 1] *= sy
+/home/katrus/venv/default/lib/python3.12/site-packages/matplotlib/transforms.py:2060: ComplexWarning: Casting complex values to real discards the imaginary part
+  self._mtx[1, 2] *= sy
+/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/core_functions/plotting.py:284: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  plt.legend(fancybox=True)
+0.1653369124816484
+GP y_mean: 0.002599620927675494 GP y_std: 0.023251715950718416
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002567526842148636 GP y_std: 0.023107741093108213
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002536215539195604 GP y_std: 0.0229664080175631
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0025056587254703557 GP y_std: 0.02282763691021008
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002475829454929042 GP y_std: 0.022691351292772357
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0024467020495769357 GP y_std: 0.022557477845452277
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0024182520257446456 GP y_std: 0.022425946241174905
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0023904560254487304 GP y_std: 0.022296688990341058
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0023632917524322675 GP y_std: 0.022169641295311297
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002336737912517298 GP y_std: 0.02204474091390812
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0023107741579337726 GP y_std: 0.021921928031283174
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0022853810353191156 GP y_std: 0.021801145139550455
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0022605399371091253 GP y_std: 0.021682336924635077
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002236233056064941 GP y_std: 0.021565450159832134
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0022124433427025483 GP y_std: 0.02145043360561021
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0021891544654109424 GP y_std: 0.021337237915231348
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002166350773062912 GP y_std: 0.021225815545792344
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002144017259938552 GP y_std: 0.02111612067432342
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.0021221395327963217 GP y_std: 0.021008109118607704
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+GP y_mean: 0.002100703779939793 GP y_std: 0.02090173826241101
+surrogate y_mean: 0.07453591622308163 surrogate y_std: 0.1653369124816484
+Making Plots
+plotting gaussian
+plotting kernel
+plotting length scale
+plotting x explored
+Initial Current 0.20796966989199944 pA
+Max Current:  0.20796966989199944 pA
+Optimal input:  tensor([0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 7.8000, 7.5000, 0.0000])
+plotting beam profile
+Total time taken: 292.0642 seconds

@@ -1,0 +1,433 @@
+<seq><notes>
+    REFERENCES
+    Trace 3d files:
+    inputDRAGON.t3d
+    finalDRAGON.t3d
+
+    Olivier: Above deprecated. Reference DWG for sequence start is
+    IHE0120D.DWG at coords [INCH]:
+    x = 50.382"
+    y = 114.622"
+
+    which corresponds to HEBT2:MB0 arc start.
+
+    HEBT2:MB0/MB1 arclength [in]: 15.461" = 392.7094mm
+
+	  Olivier:measured fullgap on IHE0120D.dwg for HEBT2:MB0, got
+	  2.177" = 5.53cm
+  </notes>
+
+  <notes> Sunrise Engineering and MFG. INC. May 2000 - S/N 4118-4 </notes>
+  <notes>
+	  Olivier: note - diagnostic positions not explicit on drawing,
+	  inferred and approximate.
+  </notes>
+ <element id="HEBT2:FC1" type="fc" s="1273.6577*mm" l="0.00*mm">
+    <layout x="21963.055*mm" y="87091.187*mm" z="7907.5828*mm"/>
+    <diag gain_type="isac_type_c"/>
+    <epics>
+      <setpoint pv="HEBT2:FC1:DRVON" type="drivein"/>
+      <setpoint pv="HEBT2:FC1:DRVOFF" type="driveout"/>
+      <setpoint pv="HEBT2:FC1:GAIN" type="gainset"/>
+      <setpoint pv="HEBT2:FC1:RDCUR.SMOO" type="smoothing"/>
+      <readback pv="HEBT2:FC1:SCALECUR" unit="A" type="current"/>
+      <readback pv="HEBT2:BIAS5:STATPOL" type="polarity"/>
+      <readback pv="HEBT2:FC1:GOODBIAS" type="biasstatus"/>
+      <readback pv="HEBT2:FC1:STATON" type="instatus"/>
+      <readback pv="HEBT2:FC1:STATOFF" type="outstatus"/>
+    </epics>
+  </element>
+
+
+  <element id="HEBT2:Q2" type="mq" s="1563.6494*mm" l="80.00*mm">
+    <layout x="22159.563*mm" y="87009.796*mm" z="7907.5928*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:Q1:CUR" unit="A" min="0.0" max="125.0" type="current"/>
+    </epics>
+    <optr Btip="-(HEBT2:Q1:CUR*2.9746*G/A)" aperR="1.0*cm">
+  </optr>
+  </element>
+
+
+  <notes> Sunrise Engineering and MFG. INC. May 2000 - S/N 4118-2 </notes>
+  <element id="HEBT2:MB1" type="mb" s="2349.5635*mm" l="392.7094*mm">
+    <layout x="22877.541*mm" y="86691.612*mm" z="7907.6309*mm"/>
+    <fancy_set_parameters didt_max="6.0" final_step="1.0" number_periods="4"/>
+    <epics>
+      <setpoint pv="HEBT2:MB1:CUR" type="current" unit="A" min="0.0" max="500.0"/>
+      <setpoint pv="HEBT2:MB1:FLD:MODE" type="pid"/>
+      <setpoint pv="HEBT2:MB1:FLD:SETP" pidpv="HEBT2:MB1:FLD:MODE" type="Bfield" unit="G" min="0.0" max="12000.0"/>
+      <readback pv="HEBT2:MB1:RDCUR" unit="A"/>
+      <readback pv="HEBT2:HALLMB1:RDFIELD" unit="G"/>
+    </epics>
+    <optr theta="22.5*deg" ip="1" Btip="+(HEBT2:MB1:CUR*27.845*G/A+(HEBT2:MB1:CUR^3)*1.4746E-06*G/A^3+(HEBT2:MB1:CUR^5)*-3.1242E-11*G/A^5)" entredge="22.5/2*deg" exitedge="22.5/2*deg" fieldindex="0.000" k1="0.550" k2="0.000" fullgap="5.53*cm">
+  </optr>
+  </element>
+
+  <notes>
+	  Olivier: Switch reference here. Drawing IHE0120D.dwg ends at coords [inch]:
+	  x = 159.100"
+	  y = 110.443"
+
+	  new reference is drawing ISK0141D.dwg, with start coords [inch]:
+	  x = 920.324"
+	  y = 3406.143"
+
+	  the common reference point is the far side of an beampipe attachment
+	  vacuum flange.
+  </notes>
+
+    <element id="HEBT2:XCB2" type="mcb" s="3150.0275*mm" l="0.00*mm">
+    <layout x="23704.084*mm" y="85892.25*mm" z="7907.7001*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:XCB2:CUR" unit="A" min="-3.0" max="3.0" type="current"/>
+    </epics>
+  </element>
+
+
+  <element id="HEBT2:YCB2" type="mcb" s="3150.0275*mm" l="0.00*mm">
+    <layout x="23704.084*mm" y="85892.25*mm" z="7907.7001*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:YCB2:CUR" unit="A" min="-3.0" max="3.0" type="current"/>
+    </epics>
+  </element>
+
+  <notes> Danfysik 1982 L1 - #82447 </notes>
+  <element id="HEBT2:Q3" type="mq" s="3864.9009*mm" l="180.00*mm">
+    <layout x="24004.889*mm" y="85591.454*mm" z="7907.7258*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:Q3:CUR" unit="A" min="0.0" max="60.0" type="current"/>
+    </epics>
+    <!--<optr Btip="+(HEBT2:Q3:CUR*92.286*G/A+(HEBT2:Q3:CUR^3)*-9.711E-04*G/A^3+(HEBT2:Q3:CUR^5)*8.302E-08*G/A^5)" aperR="2.6*cm"/>-->
+    <optr Btip="+(43.0 + 8635.4*(HEBT2:Q3:CUR/100) + 7328.0*(HEBT2:Q3:CUR/100)**2 - 29860.2*(HEBT2:Q3:CUR/100)**3 + 50329.3*(HEBT2:Q3:CUR/100)**4 - 31995.3*(HEBT2:Q3:CUR/100)**5)*G" aperR="2.6*cm"/>
+  </element>
+
+  <notes> Danfysik 1982 L1 - #82448 </notes>
+  <element id="HEBT2:Q4" type="mq" s="4394.8977*mm" l="180.00*mm">
+    <layout x="24379.658*mm" y="85216.69*mm" z="7907.7573*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:Q4:CUR" unit="A" min="0.0" max="60.0" type="current"/>
+    </epics>
+    <!--<optr Btip="-(HEBT2:Q4:CUR*92.286*G/A+(HEBT2:Q4:CUR^3)*-9.711E-04*G/A^3+(HEBT2:Q4:CUR^5)*8.302E-08*G/A^5)" aperR="2.6*cm"/>-->
+    <optr Btip="-(43.0 + 8635.4*(HEBT2:Q4:CUR/100) + 7328.0*(HEBT2:Q4:CUR/100)**2 - 29860.2*(HEBT2:Q4:CUR/100)**3 + 50329.3*(HEBT2:Q4:CUR/100)**4 - 31995.3*(HEBT2:Q4:CUR/100)**5)*G" aperR="2.6*cm"/>
+  </element>
+
+  <element id="mcat-set-hebt2-rpm1-2" type="fortline" s="5244.6501*mm" l="0">
+	  <optr>! MCAT-verb: set-hebt2-rpm1-focus</optr>
+	  <optr>!nlines: 4</optr>
+	  <optr>!call twissmatch(1,0.,bx1,10.,1)	</optr>
+	  <optr>!call twissmatch(3,0.,bx1,10.,1)	</optr>
+	  <optr>!call fit(1,1,6,0.0,1.,1)</optr>
+	  <optr>!return</optr>
+
+  </element>
+
+  <element id="HEBT2:RPM4" type="rpm" s="5244.6501*mm" l="0.00*mm">
+    <layout x="24945.345*mm" y="84651.009*mm" z="7907.8054*mm"/>
+    <diag gain_type="isac_type_b"/>
+    <profile scale="2.54*cm">
+      <trace pos="left" axis="+y"/>
+      <trace pos="right" axis="+x"/>
+    </profile>
+    <epics>
+      <setpoint pv="HEBT2:RPM4:SUBRPM" type="scan"/>
+      <setpoint pv="HEBT2:RPM4:GAIN" type="gainset"/>
+      <readback pv="HEBT2:RPM4:CURARR" type="profile"/>
+      <readback pv="HEBT2:RPM4:POSARR" type="position"/>
+      <readback pv="HEBT2:RPM4:RDPRK" type="status"/>
+    </epics>
+  </element>
+
+
+  <element id="HEBT2:FFC4" type="ffc" s="5274.4007*mm" l="0.00*mm">
+    <layout x="25012.238*mm" y="84584.114*mm" z="7907.8112*mm"/>
+    <diag gain_type="isac_type_b"/>
+    <epics>
+<!--       <setpoint pv="HEBT2:FFC4:DRVON" rw="RO" type="drivein"/>
+      <setpoint pv="HEBT2:FFC4:DRVOFF" rw="RO" type="driveout"/>
+      <readback pv="HEBT3:BIAS3:STATPOL" type="polarity"/>
+      <readback pv="HEBT2:FFC4:BIASOK" type="biasstatus"/>
+      <readback pv="HEBT2:FFC4:STATON" type="instatus"/>
+      <readback pv="HEBT2:FFC4:STATOFF" type="outstatus"/> -->
+    </epics>
+  </element> 
+
+
+  <element id="HEBT2:FC4" type="fc" s="5274.4007*mm" l="0.00*mm">
+    <layout x="25012.238*mm" y="84584.114*mm" z="7907.8112*mm"/>
+    <diag gain_type="isac_type_a"/>
+    <epics>
+      <setpoint pv="HEBT2:FC4:DRVON" type="drivein"/>
+      <setpoint pv="HEBT2:FC4:DRVOFF" type="driveout"/>
+      <setpoint pv="HEBT2:FC4:GAIN" type="gainset"/>
+      <setpoint pv="HEBT2:FC4:RDCUR.SMOO" type="smoothing"/>
+      <readback pv="HEBT2:FC4:SCALECUR" unit="A" type="current"/>
+      <readback pv="HEBT2:BIAS6:STATPOL" type="polarity"/>
+      <readback pv="HEBT2:FC4:GOODBIAS" type="biasstatus"/>
+      <readback pv="HEBT2:FC4:STATON" type="instatus"/>
+      <readback pv="HEBT2:FC4:STATOFF" type="outstatus"/>
+    </epics>
+  </element>
+
+
+  <element id="HEBT2:XCB4" type="mcb" s="5441.7321*mm" l="0.00*mm">
+    <layout x="25648.636*mm" y="83947.723*mm" z="7907.8655*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:XCB4:CUR" unit="A" min="-100.0" max="100.0" type="current"/>
+    </epics>
+  </element>
+
+
+  <element id="HEBT2:YCB4" type="mcb" s="5441.7321*mm" l="0.00*mm">
+    <layout x="25648.636*mm" y="83947.723*mm" z="7907.8655*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:YCB4:CUR" unit="A" min="-100.0" max="100.0" type="current"/>
+    </epics>
+  </element>
+
+  <notes> Danfysik 1987 L1 - #87133 </notes>
+  <element id="HEBT2:Q5" type="mq" s="5684.8845*mm" l="180.00*mm">
+    <layout x="25291.83*mm" y="84304.527*mm" z="7907.835*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:Q5:CUR" unit="A" min="0.0" max="60.0" type="current"/>
+    </epics>
+    <!--<optr Btip="-(HEBT2:Q5:CUR*92.286*G/A+(HEBT2:Q5:CUR^3)*-9.711E-04*G/A^3+(HEBT2:Q5:CUR^5)*8.302E-08*G/A^5)" aperR="2.6*cm"/>-->
+    <optr Btip="-(43.0 + 8635.4*(HEBT2:Q5:CUR/100) + 7328.0*(HEBT2:Q5:CUR/100)**2 - 29860.2*(HEBT2:Q5:CUR/100)**3 + 50329.3*(HEBT2:Q5:CUR/100)**4 - 31995.3*(HEBT2:Q5:CUR/100)**5)*G" aperR="2.6*cm"/>
+  </element>
+
+  <notes> Danfysik 1987 L1 - #87119 </notes>
+  <element id="HEBT2:Q6" type="mq" s="6164.8882*mm" l="180.00*mm">
+    <layout x="25631.245*mm" y="83965.126*mm" z="7907.8636*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:Q6:CUR" unit="A" min="0.0" max="60.0" type="current"/>
+    </epics>
+    <!--<optr Btip="+(HEBT2:Q6:CUR*92.286*G/A+(HEBT2:Q6:CUR^3)*-9.711E-04*G/A^3+(HEBT2:Q6:CUR^5)*8.302E-08*G/A^5)" aperR="2.6*cm">-->
+    <optr Btip="+(43.0 + 8635.4*(HEBT2:Q6:CUR/100) + 7328.0*(HEBT2:Q6:CUR/100)**2 - 29860.2*(HEBT2:Q6:CUR/100)**3 + 50329.3*(HEBT2:Q6:CUR/100)**4 - 31995.3*(HEBT2:Q6:CUR/100)**5)*G" aperR="2.6*cm"/>
+  </element>
+
+
+  <element id="HEBT2:XCB6" type="mcb" s="6404.3832*mm" l="0.00*mm">
+    <layout x="25797.132*mm" y="83799.24*mm" z="7907.8774*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:XCB6:CUR" unit="A" min="-100.0" max="100.0" type="current"/>
+    </epics>
+  </element>
+
+
+  <element id="HEBT2:YCB6" type="mcb" s="6404.3832*mm" l="0.00*mm">
+    <layout x="25797.132*mm" y="83799.24*mm" z="7907.8774*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:YCB6:CUR" unit="A" min="-100.0" max="100.0" type="current"/>
+    </epics>
+  </element>
+
+  <notes> Danfysik 1987 L1 - #87114 </notes>
+  <element id="HEBT2:Q7" type="mq" s="6644.8829*mm" l="180.00*mm">
+    <layout x="25970.657*mm" y="83625.717*mm" z="7907.8922*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:Q7:CUR" unit="A" min="0.0" max="60.0" type="current"/>
+    </epics>
+    <!--<optr Btip="-(HEBT2:Q7:CUR*92.286*G/A+(HEBT2:Q7:CUR^3)*-9.711E-04*G/A^3+(HEBT2:Q7:CUR^5)*8.302E-08*G/A^5)" aperR="2.6*cm"/>-->
+    <optr Btip="-(43.0 + 8635.4*(HEBT2:Q7:CUR/100) + 7328.0*(HEBT2:Q7:CUR/100)**2 - 29860.2*(HEBT2:Q7:CUR/100)**3 + 50329.3*(HEBT2:Q7:CUR/100)**4 - 31995.3*(HEBT2:Q7:CUR/100)**5)*G" aperR="2.6*cm"/>
+  </element>
+
+  <notes> Danfysik 1987 L1 - #87103 </notes>
+  <element id="HEBT2:Q8" type="mq" s="7124.8776*mm" l="180.00*mm">
+    <layout x="26310.072*mm" y="83286.316*mm" z="7907.9208*mm"/>
+    <epics>
+      <setpoint pv="HEBT2:Q8:CUR" unit="A" min="0.0" max="60.0" type="current"/>
+    </epics>
+    <!--<optr Btip="-(HEBT2:Q8:CUR*92.286*G/A+(HEBT2:Q8:CUR^3)*-9.711E-04*G/A^3+(HEBT2:Q8:CUR^5)*8.302E-08*G/A^5)" aperR="2.6*cm"/>-->
+    <optr Btip="-(43.0 + 8635.4*(HEBT2:Q8:CUR/100) + 7328.0*(HEBT2:Q8:CUR/100)**2 - 29860.2*(HEBT2:Q8:CUR/100)**3 + 50329.3*(HEBT2:Q8:CUR/100)**4 - 31995.3*(HEBT2:Q8:CUR/100)**5)*G" aperR="2.6*cm"/>
+  </element>
+
+
+  <element id="HEBT2:IV8" type="iv" s="7334.2618*mm" l="0.00*mm">
+    <layout x="26659.809*mm" y="82936.584*mm" z="7907.9504*mm"/>
+    <border require="closed"> 
+      This valve marks the border between ISAC-I linac and HEBT2-DRAGON facilities
+    </border>
+    <epics>
+      <readback pv="HEBT2:IV8:STATOFF" type="instatus"/>
+      <readback pv="HEBT2:IV8:STATON" type="outstatus"/>
+    </epics>
+  </element>
+
+
+  <element id="Dragon-Gas-Slit-1" type="slit" s="7680.3776*mm" l="0">
+    <optr aperrx="15.0*mm" aperry="15.0*mm"/>
+  </element>  
+  
+    <element id="Dragon-Gas-Slit-2" type="slit" s="7880.3776*mm" l="0">
+    <optr aperrx="13.0*mm" aperry="13.0*mm"/>
+  </element>  
+
+    <element id="Dragon-Gas-Slit-3" type="slit" s="7980.3776*mm" l="0">
+    <optr aperrx="11.8*mm" aperry="11.8*mm"/>
+  </element>  
+
+    <element id="Dragon-Gas-Slit-4" type="slit" s="8134.3776*mm" l="0">
+    <optr aperrx="9.9*mm" aperry="9.9*mm"/>
+  </element>  
+
+    <element id="Dragon-Gas-Slit-5" type="slit" s="8195.8776*mm" l="0">
+    <optr aperrx="10.0*mm" aperry="10.0*mm"/>
+  </element>  
+
+    <element id="Dragon-Gas-Slit-6" type="slit" s="8347.8776*mm" l="0">
+    <optr aperrx="8.0*mm" aperry="8.0*mm"/>
+  </element>  
+
+    <element id="Dragon-Gas-Slit-7" type="slit" s="8360.5276*mm" l="0">
+    <optr aperrx="6.0*mm" aperry="6.0*mm"/>
+    <notes>
+      upstream edge of the gas target
+    </notes>
+  </element>  
+
+  <element id="mcat-set-dragon-gas" type="fortline" s="8424.8776*mm" l="0">
+	  <optr>! MCAT-verb: set-dragon-gas</optr>
+	  <optr>!nlines: 4</optr>
+	  <optr>!call twissmatch(1,0.,bx1,10.,1)	</optr>
+	  <optr>!call twissmatch(3,0.,bx1,10.,1)	</optr>
+	  <optr>!call fit(1,1,6,0.0,1.,1)</optr>
+	  <optr>!return</optr>
+
+  </element>
+
+  <element id="DRAGON-Gas" type="marker" s="8424.8776*mm" l="0"/>
+
+
+  <element id="endOf_hebt2_db0" type="marker" s="8424.8776*mm" l="0.00*mm"/>
+
+
+  <notes>
+	  2019-11-27 Olivier - added a marker 130cm from HEBT2:Q8 for DRAGON
+	  gas chamber - based on TRI-DN-99-23, p. 18/30, sect 4.3.2
+
+	  2022-06-06 SK - added endOf_hebt2_db0 marker an atrbitrary distance downstream of gas match to give my a place to add DRA:FC1 for snapshot program.
+
+          2023-08-14 Olivier - sequence now ends at DRAGON gas chamber centerpoint (double check positions, this is approximate)
+
+    2026-04-11 AK added slit geometry for the dragon gas target. Based on Hutcheon 2003 Nim A paper. All numbers are relative to gas target position,
+    so needs to be updated if gas target position is changed.
+  </notes>
+
+<notes>
+		REFERENCES
+		IHE0058D.DRW 
+		IHE0059D.DRW 
+		IHE0050D.DRW 
+
+		Reference for sequence start is IHE0059D.drw at coordinates
+
+		Which corresponds to the DRAGON gas target and the end of sequence hebt2_db0
+
+		TRIUMF Magnet Index for Quadrupoles:
+		https://documents.triumf.ca/docushare/dsweb/Get/Document-194995/Q32_4Q8_3.pdf
+		https://documents.triumf.ca/docushare/dsweb/Get/Document-194996/Q33_6Q11_3.pdf
+		https://documents.triumf.ca/docushare/dsweb/Get/Document-194997/Q34_6QS11_3.pdf
+		https://documents.triumf.ca/docushare/dsweb/Get/Document-195000/Q37_SmitElmaQuad.pdf
+
+		All steerers, slits, and BCMs have arbitrary positions for now until we get proper data.
+	</notes>
+	
+	
+
+	<element id="DRAGON-Gas" type="marker" s="0.00" l="0.00"/>
+
+
+	<element id="Dragon-Gas-Slit-8" type="slit" s="54.35*mm" l="0">
+    	<optr aperrx="8.0*mm" aperry="8.0*mm"/>
+    	<notes>
+      downstream edge of the gas target
+    	</notes>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-9" type="slit" s="77*mm" l="0">
+    	<optr aperrx="9.0*mm" aperry="9.0*mm"/>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-10" type="slit" s="229.0*mm" l="0">
+    	<optr aperrx="11.8*mm" aperry="11.8*mm"/>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-11" type="slit" s="289.0*mm" l="0">
+    	<optr aperrx="18.05*mm" aperry="18.05*mm"/>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-12" type="slit" s="324.0*mm" l="0">
+    	<optr aperrx="18.05*mm" aperry="18.05*mm"/>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-13" type="slit" s="367.0*mm" l="0">
+    	<optr aperrx="17.9*mm" aperry="17.9*mm"/>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-14" type="slit" s="445.0*mm" l="0">
+    	<optr aperrx="20.6*mm" aperry="20.6*mm"/>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-14" type="slit" s="544.0*mm" l="0">
+    	<optr aperrx="25.0*mm" aperry="25.0*mm"/>
+	</element>  
+
+	<element id="Dragon-Gas-Slit-14" type="slit" s="849.0*mm" l="0">
+    	<optr aperrx="36.0*mm" aperry="36.0*mm"/>
+	</element>  
+
+	<element id="DRA:Q1" type="mq" s="1195.0*mm" l="252.30*mm">
+		<layout x="0.0*cm" y="0.0*cm" z="0.0*cm"/>
+		<epics>
+			<setpoint pv="DRA:Q1:CUR" unit="A" min="0.0" max="350" type="current"/>
+			<setpoint pv="DRA:Q1:DRVOFF" type="driveoff"/>
+			<setpoint pv="DRA:Q1:DRVON" type="driveon"/>
+			<readback pv="DRA:Q1:RDCUR" unit="A" type="current"/>
+			<readback pv="DRA:Q1:ALIVE" type="status"/>
+			<readback pv="DRA:Q1:STATDRV" type="status"/> <notes> supercedes alive </notes>
+			<readback pv="DRA:Q1:RDVOL" unit="V" type="voltage"/>	
+			<readback pv="DRA:HALLQ1:RDFIELD" unit="G" type="BField"/>
+			<readback pv="DRA:Q1:STATON" type="status"/>
+			
+		</epics>
+		<optr Btip="-0.00092*DRA:Q1:CUR*T/A" aperR="5.3975*cm"/>
+	</element>
+
+	<element id="DRA:Q2" type="mq" s="1745.0*mm" l="333.85*mm">
+		<layout x="0.0*cm" y="0.0*cm" z="0.0*cm"/>
+		<epics>
+			<setpoint pv="DRA:Q2:CUR" unit="A" min="0.0" max="350" type="current"/>
+			<setpoint pv="DRA:Q2:DRVOFF" type="driveoff"/>
+			<setpoint pv="DRA:Q2:DRVON" type="driveon"/>
+			<readback pv="DRA:Q2:RDCUR" unit="A" type="current"/>
+			<readback pv="DRA:Q2:ALIVE" type="status"/>
+			<readback pv="DRA:Q2:STATDRV" type="status"/> <notes> supercedes alive </notes>
+			<readback pv="DRA:Q2:RDVOL" unit="V" type="voltage"/>	
+			<readback pv="DRA:HALLQ2:RDFIELD" unit="G" type="BField"/>
+			<readback pv="DRA:Q2:STATON" type="status"/>
+			
+		</epics>
+		<optr Btip="0.00097*DRA:Q2:CUR*T/A" aperR="7.9375*cm"/>
+	</element>
+
+	<notes> Doesn't include any PVs for the integrator yet </notes>
+	<element id="DRA:FC1" type="fc" s="2231.88*mm" l="0.0">
+		<diag gain_type="isac_type_b"/>
+		<layout x="0.0*cm" y="0.0*cm" z="0.0*cm"/>
+		<epics>
+			<setpoint pv="DRA:FC1:DRVON" type="drivein"/>
+			<setpoint pv="DRA:FC1:DRVOFF" type="driveoff"/>
+			<setpoint pv="DRA:FC1:GAIN" type="gainset"/>
+			<setpoint pv="DRA:FC1:RDCUR.SMOO" type="smoothing"/>
+			<setpoint pv="DRA:BIAS6:VOLSET" unit="V" min="60" max="350" type="voltage"/>
+			<readback pv="DRA:BIAS6:RDVOL" unit="V" type="voltage"/>
+			<readback pv="DRA:FC1:SCALECUR" unit="A" type="current"/>
+			<readback pv="DRA:BIAS6:STATPOL" type="polarity"/> 
+			<readback pv="DRA:FC1:GOODBIAS" type="biasstatus"/>
+			<readback pv="DRA:FC1:STATON" type="instatus"/>
+			<readback pv="DRA:FC1:STATOFF" type="outstatus"/>
+		</epics>
+	</element>
+	
+	<notes> no official location yet, placeholder by Olivier 2023-08-14 </notes>
+	</seq>

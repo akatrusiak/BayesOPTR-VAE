@@ -1,0 +1,166 @@
+hydra:
+  run:
+    dir: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/bo_runs/run_479__surrogate_mean__seed0
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  launcher:
+    _target_: hydra._internal.core_plugins.basic_launcher.BasicLauncher
+  sweeper:
+    _target_: hydra._internal.core_plugins.basic_sweeper.BasicSweeper
+    max_batch_size: null
+    params: null
+  help:
+    app_name: ${hydra.job.name}
+    header: '${hydra.help.app_name} is powered by Hydra.
+
+      '
+    footer: 'Powered by Hydra (https://hydra.cc)
+
+      Use --hydra-help to view Hydra specific help
+
+      '
+    template: '${hydra.help.header}
+
+      == Configuration groups ==
+
+      Compose your configuration from those groups (group=option)
+
+
+      $APP_CONFIG_GROUPS
+
+
+      == Config ==
+
+      Override anything in the config (foo.bar=value)
+
+
+      $CONFIG
+
+
+      ${hydra.help.footer}
+
+      '
+  hydra_help:
+    template: 'Hydra (${hydra.runtime.version})
+
+      See https://hydra.cc for more info.
+
+
+      == Flags ==
+
+      $FLAGS_HELP
+
+
+      == Configuration groups ==
+
+      Compose your configuration from those groups (For example, append hydra/job_logging=disabled
+      to command line)
+
+
+      $HYDRA_CONFIG_GROUPS
+
+
+      Use ''--cfg hydra'' to Show the Hydra config.
+
+      '
+    hydra_help: ???
+  hydra_logging:
+    version: 1
+    formatters:
+      simple:
+        format: '[%(asctime)s][HYDRA] %(message)s'
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+    root:
+      level: INFO
+      handlers:
+      - console
+    loggers:
+      logging_example:
+        level: DEBUG
+    disable_existing_loggers: false
+  job_logging:
+    version: 1
+    formatters:
+      simple:
+        format: '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+      file:
+        class: logging.FileHandler
+        formatter: simple
+        filename: ${hydra.runtime.output_dir}/${hydra.job.name}.log
+    root:
+      level: INFO
+      handlers:
+      - console
+      - file
+    disable_existing_loggers: false
+  env: {}
+  mode: RUN
+  searchpath: []
+  callbacks: {}
+  output_subdir: .hydra
+  overrides:
+    hydra:
+    - hydra.run.dir=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/bo_runs/run_479__surrogate_mean__seed0
+    - hydra.mode=RUN
+    task:
+    - misalignments=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/misalignments_yamls/run_479.yaml
+    - sim.random_seed=0
+    - iterations=60
+    - initial_points=20
+    - mean_function.surrogate_path=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/vae_project/vae/runs/surrogate_n720/sgt_wide/best.pt
+    - mean_function.delta_yaml=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/misalignments_yamls/run_479.yaml
+    - mean_function.delta_names=[MISALIGNX1,MISALIGNY1,MISALIGNX2,MISALIGNY2,HEBT2:Q2:MISALIGNX,HEBT2:Q2:MISALIGNY,HEBT2:Q3:MISALIGNX,HEBT2:Q3:MISALIGNY,HEBT2:Q4:MISALIGNX,HEBT2:Q4:MISALIGNY,HEBT2:Q5:MISALIGNX,HEBT2:Q5:MISALIGNY,HEBT2:Q6:MISALIGNX,HEBT2:Q6:MISALIGNY,HEBT2:Q7:MISALIGNX,HEBT2:Q7:MISALIGNY,HEBT2:Q8:MISALIGNX,HEBT2:Q8:MISALIGNY,DRA:Q1:MISALIGNX,DRA:Q1:MISALIGNY,DRA:Q2:MISALIGNX,DRA:Q2:MISALIGNY,HEBT2:MB1:MISALIGNX,HEBT2:MB1:MISALIGNY,HEBT2:MB1:MISALIGNZ,HEBT2:MB1:MBX,HEBT2:MB1:MBY]
+    - mean_function.surrogate_input_names=[HEBT2:XCB2,HEBT2:YCB2,HEBT2:XCB4,HEBT2:YCB4,HEBT2:Q5:CUR,HEBT2:Q6:CUR,HEBT2:XCB6,HEBT2:YCB6,HEBT2:Q7:CUR]
+    - mean_function.device=cpu
+  job:
+    name: main
+    chdir: true
+    override_dirname: initial_points=20,iterations=60,mean_function.delta_names=[MISALIGNX1,MISALIGNY1,MISALIGNX2,MISALIGNY2,HEBT2:Q2:MISALIGNX,HEBT2:Q2:MISALIGNY,HEBT2:Q3:MISALIGNX,HEBT2:Q3:MISALIGNY,HEBT2:Q4:MISALIGNX,HEBT2:Q4:MISALIGNY,HEBT2:Q5:MISALIGNX,HEBT2:Q5:MISALIGNY,HEBT2:Q6:MISALIGNX,HEBT2:Q6:MISALIGNY,HEBT2:Q7:MISALIGNX,HEBT2:Q7:MISALIGNY,HEBT2:Q8:MISALIGNX,HEBT2:Q8:MISALIGNY,DRA:Q1:MISALIGNX,DRA:Q1:MISALIGNY,DRA:Q2:MISALIGNX,DRA:Q2:MISALIGNY,HEBT2:MB1:MISALIGNX,HEBT2:MB1:MISALIGNY,HEBT2:MB1:MISALIGNZ,HEBT2:MB1:MBX,HEBT2:MB1:MBY],mean_function.delta_yaml=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/misalignments_yamls/run_479.yaml,mean_function.device=cpu,mean_function.surrogate_input_names=[HEBT2:XCB2,HEBT2:YCB2,HEBT2:XCB4,HEBT2:YCB4,HEBT2:Q5:CUR,HEBT2:Q6:CUR,HEBT2:XCB6,HEBT2:YCB6,HEBT2:Q7:CUR],mean_function.surrogate_path=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/vae_project/vae/runs/surrogate_n720/sgt_wide/best.pt,misalignments=/mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/misalignments_yamls/run_479.yaml,sim.random_seed=0
+    id: ???
+    num: ???
+    config_name: config
+    env_set: {}
+    env_copy: []
+    config:
+      override_dirname:
+        kv_sep: '='
+        item_sep: ','
+        exclude_keys: []
+  runtime:
+    version: 1.3.2
+    version_base: '1.3'
+    cwd: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt
+    config_sources:
+    - path: hydra.conf
+      schema: pkg
+      provider: hydra
+    - path: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/config
+      schema: file
+      provider: main
+    - path: ''
+      schema: structured
+      provider: schema
+    output_dir: /mnt/c/users/alexa/onedrive/triumf/bayesoptr_research/bayesopt/runs/bo_experiment/bo_runs/run_479__surrogate_mean__seed0
+    choices:
+      sim: hebt2
+      beam: devel
+      hydra/env: default
+      hydra/callbacks: null
+      hydra/job_logging: default
+      hydra/hydra_logging: default
+      hydra/hydra_help: default
+      hydra/help: default
+      hydra/sweeper: basic
+      hydra/launcher: basic
+      hydra/output: default
+  verbose: false

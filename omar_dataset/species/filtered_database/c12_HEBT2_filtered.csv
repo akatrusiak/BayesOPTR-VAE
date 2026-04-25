@@ -1,0 +1,16 @@
+run_name,experiment,beta,num_elements,benders,first_element,fc,initial_current,final_current,transmission,energy,charge_state,isotope,path,bayesopt_type,bound_steering,step_weighted,num_iterations
+20241021_013956,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,657,138,0.21,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,48
+20241021_014810,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,657,177,0.27,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,91
+20241021_020608,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,657,147,0.22,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,100
+20241021_023503,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,657,527,0.8,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,100
+20241021_031315,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,657,113,0.17,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,140
+20241021_033337,HEBT,5,9,1,HEBT2:XCB2,DRA:FC1,657,351,0.53,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,140
+20241021_041038,HEBT,5,9,1,HEBT2:XCB2,DRA:FC1,657,498,0.76,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,140
+20241021_043507,HEBT,5,9,1,HEBT2:XCB2,DRA:FC1,657,193,0.29,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,153
+20241021_050049,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,657,155,0.24,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,62
+20241021_054102,HEBT,5,9,1,HEBT2:XCB2,DRA:FC1,657,535,0.81,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,174
+20241106_112946,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,352,30,0.09,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,108
+20241106_122453,HEBT,5,9,1,HEBT2:XCB2,DRA:FC1,352,73,0.21,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,189
+20241106_125917,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,332,36,0.11,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,129
+20241106_153855,HEBT,3,9,1,HEBT2:XCB2,DRA:FC1,465,167,0.36,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,110
+20241106_155347,HEBT,5,9,1,HEBT2:XCB2,DRA:FC1,465,280,0.6,464,3+,12C,ios-mws-hebt2-dragon,standard,0,0,155
